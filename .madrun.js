@@ -3,12 +3,13 @@ import {
     cutEnv,
 } from 'madrun';
 
-const NODE_OPTIONS = `'--no-warnings --loader mock-import'`;
+const NODE_OPTIONS = `'--no-warnings --loader zenload'`;
 const testEnv = {
     NODE_OPTIONS,
 };
 
 export default {
+    'loader': () => 'node --loader ./zenload/zenload.js',
     'test': () => [testEnv, `tape 'test/**/*.js' 'lib/**/*.spec.js'`],
     'coverage': async () => [testEnv, `c8 --exclude="lib/**/{fixture,*.spec.js}" ${await cutEnv('test')}`],
     'lint': () => 'putout .',
