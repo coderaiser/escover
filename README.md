@@ -28,10 +28,7 @@ NODE_OPTIONS="'--loader c4'" c4 npm test
 🧨`C4` uses loader which [transforms source code](https://putout.cloudcmd.io/#/gist/4de40f9c945fe987cb9327fe85631f16/71dc364670db2fa6d50e040055a20d142d4d90f7) and saves location of covered and covered blocks.
 Save information into a file `coverage.json` and shows report:
 
-```
-🧨 changelog.js: 1,7,9
-☘️  simple.js
-```
+![Screen Shot 2022-01-03 at 2 09 05 AM](https://user-images.githubusercontent.com/1573141/147892869-fbccb588-b997-4c4a-a88e-f28a29d2bdd6.png)
 
 Before:
 
