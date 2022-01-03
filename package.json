@@ -1,0 +1,50 @@
+{
+  "name": "c4",
+  "version": "2.0.0",
+  "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
+  "description": "🧨C4 explosive coverage tool",
+  "main": "lib/changelog.js",
+  "type": "module",
+  "bin": {
+    "c4": "bin/c4.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coderaiser/c4.git"
+  },
+  "keywords": [
+    "changelog"
+  ],
+  "scripts": {
+    "test": "madrun test",
+    "coverage": "madrun coverage",
+    "lint": "madrun lint",
+    "fresh:lint": "madrun fresh:lint",
+    "lint:fresh": "madrun lint:fresh",
+    "fix:lint": "madrun fix:lint",
+    "report": "madrun report",
+    "watcher": "madrun watcher",
+    "watch:test": "madrun watch:test",
+    "watch:lint": "madrun watch:lint",
+    "watch:tape": "madrun watch:tape",
+    "watch:coverage": "madrun watch:coverage"
+  },
+  "dependencies": {
+    "chalk": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=14"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "c8": "^7.8.0",
+    "eslint": "^8.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-putout": "^12.2.0",
+    "madrun": "^8.8.1",
+    "mock-import": "^2.0.0",
+    "montag": "^1.2.1",
+    "putout": "^22.1.1",
+    "supertape": "^6.0.5"
+  }
+}
