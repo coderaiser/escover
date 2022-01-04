@@ -9,7 +9,7 @@ const testEnv = {
 };
 
 export default {
-    'loader': () => 'node --loader ./zenload/zenload.js',
+    'loader': () => 'node --loader zenload',
     'test': () => [testEnv, `tape 'test/**/*.js' 'lib/**/*.spec.js'`],
     'coverage': async () => [testEnv, `c8 --exclude="lib/**/{fixture,*.spec.js}" ${await cutEnv('test')}`],
     'lint': () => 'putout .',
