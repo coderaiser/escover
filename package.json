@@ -30,7 +30,8 @@
     "watch:coverage": "madrun watch:coverage"
   },
   "dependencies": {
-    "chalk": "^5.0.0"
+    "chalk": "^5.0.0",
+    "putout": "^23.5.0"
   },
   "engines": {
     "node": ">=14"
@@ -45,7 +46,6 @@
     "madrun": "^8.8.1",
     "mock-import": "^2.0.0",
     "montag": "^1.2.1",
-    "putout": "^23.5.0",
     "supertape": "^6.0.5",
     "zenload": "^1.0.0"
   }

@@ -40,52 +40,6 @@ Save information into a file `coverage.json` and shows report:
 
 ![Screen Shot 2022-01-03 at 2 09 05 AM](https://user-images.githubusercontent.com/1573141/147892869-fbccb588-b997-4c4a-a88e-f28a29d2bdd6.png)
 
-Before:
-
-```js
-const a = () => {
-    a = 5;
-     console.log(5);
-};
-
-
-function x() {
-
-    if (a > 2)a()
-    else b();
-}
-
-for (const x of y) {
-}
-
-```
-
-After:
-
-```js
-const a = () => {
-    __c4.setLine(1);
-    a = 5;
-    console.log(5);
-};
-
-
-function x() {
-    __c4.setLine(7);
-
-    if (a > 2) {
-        __c4.setLine(9);
-        a();
-    } else {
-        __c4.setLine(10);
-        b();
-    }
-}
-
-for (const x of y) {
-    __c4.setLine(13);
-}
-```
 ## License
 
 MIT
