@@ -6,5 +6,8 @@
     "plugins": [
         "putout",
         "node"
+    ],
+    "ignorePatterns": [
+        "fixture"
     ]
 }
