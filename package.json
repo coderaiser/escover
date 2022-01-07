@@ -1,6 +1,6 @@
 {
-  "name": "c4",
-  "version": "2.0.0",
+  "name": "@supertape/c4",
+  "version": "1.0.0",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "🧨C4 explosive coverage tool",
   "main": "lib/changelog.js",
@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "chalk": "^5.0.0",
+    "once": "^1.4.0",
     "putout": "^23.5.0"
   },
   "engines": {

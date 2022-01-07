@@ -1,15 +1,1 @@
-[{
-    "name": "changelog.js",
-    "lines": {
-        "1": false,
-        "7": false,
-        "9": false
-    }
-}, {
-    "name": "simple.js",
-    "lines": {
-        "1": true,
-        "7": true,
-        "9": true
-    }
-}]
+[]

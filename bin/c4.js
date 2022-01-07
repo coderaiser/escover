@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import chalk from 'chalk';
 
 import {readFileSync} from 'fs';
@@ -12,17 +14,17 @@ const coverage = {
     uncoveredCount: 0,
 };
 
-console.log ('# TAP version 13');
+console.log('# TAP version 13');
 console.log('');
 
 for (const {name, lines} of coverageFile) {
     const uncoveredLines = [];
     
     for (const [line, covered] of Object.entries(lines)) {
-      if (covered)
-          continue;
-       
-       uncoveredLines.push(line);
+        if (covered)
+            continue;
+        
+        uncoveredLines.push(line);
     }
     
     const file = {
