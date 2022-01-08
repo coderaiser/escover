@@ -5,9 +5,6 @@
   "description": "Coverage for EcmaScript Modules",
   "main": "lib/escover.js",
   "type": "module",
-  "bin": {
-    "escover": "bin/escover.js"
-  },
   "repository": {
     "type": "git",
     "url": "git://github.com/coderaiser/escover.git"

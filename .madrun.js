@@ -11,7 +11,7 @@ const testEnv = {
 export default {
     'loader': () => 'node --loader zenload',
     'test': () => [testEnv, `tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`],
-    'coverage': async () => [testEnv, `c8 ${await cutEnv('test')}`],
+    'coverage': async () => `c8 ${await cutEnv('test')}`,
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
