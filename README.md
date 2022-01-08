@@ -9,7 +9,7 @@
 [CoverageURL]: https://coveralls.io/github/coderaiser/escover?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/escover/badge.svg?branch=master&service=github
 
-Explosive coverage tool
+Coverage for EcmaScript Modules based on 🐊[`Putout`](https://github.com/coderaiser/putout).
 
 ## Install
 
