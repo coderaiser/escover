@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "name": "/Users/coderaiser/escover/example/example.js",
+        "lines": {
+            "1": true
+        }
+    },
+    {
+        "name": "/Users/coderaiser/escover/lib/escover.js",
+        "lines": {
+            "9": true,
+            "11": true,
+            "14": true,
+            "16": true,
+            "17": true,
+            "21": true,
+            "22": true,
+            "29": true,
+            "32": true
+        }
+    },
+    {
+        "name": "escover.js",
+        "lines": {}
+    }
+]

@@ -15,7 +15,9 @@
     "loader"
   ],
   "scripts": {
+    "loader": "madrun loader",
     "test": "madrun test",
+    "test:only": "madrun test:only",
     "coverage": "madrun coverage",
     "lint": "madrun lint",
     "fresh:lint": "madrun fresh:lint",
