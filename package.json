@@ -19,6 +19,7 @@
     "test": "madrun test",
     "test:only": "madrun test:only",
     "coverage": "madrun coverage",
+    "c4": "madrun c4",
     "lint": "madrun lint",
     "fresh:lint": "madrun fresh:lint",
     "lint:fresh": "madrun lint:fresh",
