@@ -6,11 +6,11 @@
   "main": "lib/escover.js",
   "type": "module",
   "bin": {
-    "c4": "bin/escover.js"
+    "escover": "bin/escover.js"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/coderaiser/c4.git"
+    "url": "git://github.com/coderaiser/escover.git"
   },
   "keywords": [
     "changelog"
