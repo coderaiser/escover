@@ -1,6 +1,10 @@
 {
+    "match": {
+        "report.js": {
+            "remove-console": "off"
+        }
+    },
     "rules": {
-        "putout": "on",
-        "remove-console": "off"
+        "putout": "on"
     }
 }
