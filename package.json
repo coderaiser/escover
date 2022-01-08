@@ -1,12 +1,12 @@
 {
-  "name": "@supertape/c4",
+  "name": "escover",
   "version": "1.0.0",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
-  "description": "🧨C4 explosive coverage tool",
-  "main": "lib/changelog.js",
+  "description": "Coverage for EcmaScript Modules",
+  "main": "lib/escover.js",
   "type": "module",
   "bin": {
-    "c4": "bin/c4.js"
+    "c4": "bin/escover.js"
   },
   "repository": {
     "type": "git",
