@@ -13,7 +13,9 @@
     "url": "git://github.com/coderaiser/escover.git"
   },
   "keywords": [
-    "changelog"
+    "coverage",
+    "putout",
+    "loader"
   ],
   "scripts": {
     "test": "madrun test",
