@@ -1,3 +1,12 @@
+2022.01.08, v1.0.2
+
+fix:
+- escover: impove support of AssignmentPattern
+
+feature:
+- escover: plugin-mark-line -> plugin-mark
+
+
 2022.01.08, v1.0.1
 
 fix:
