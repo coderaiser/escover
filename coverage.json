@@ -1,6 +1,6 @@
 [
     {
-        "name": "file:///Users/coderaiser/escover/example/example.js",
+        "name": "/Users/coderaiser/escover/example/example.js",
         "lines": {
             "1": true
         }
