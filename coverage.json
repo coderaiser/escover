@@ -2,8 +2,7 @@
     {
         "name": "file:///Users/coderaiser/escover/example/example.js",
         "lines": {
-            "1": true,
-            "3": false
+            "1": true
         }
     }
 ]
