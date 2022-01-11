@@ -5,6 +5,7 @@
   "description": "Coverage for EcmaScript Modules",
   "main": "lib/escover.js",
   "type": "module",
+  "commitType": "colon",
   "bin": {
     "escover": "bin/escover.js"
   },
