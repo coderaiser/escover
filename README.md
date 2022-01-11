@@ -9,24 +9,42 @@
 [CoverageURL]: https://coveralls.io/github/coderaiser/escover?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/escover/badge.svg?branch=master&service=github
 
-Coverage for EcmaScript Modules based on 🐊[`Putout`](https://github.com/coderaiser/putout).
+Coverage for EcmaScript Modules based on 🐊[`Putout`](https://github.com/coderaiser/putout) and [loaders](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders).
+
+# Why another coverage tool?
+
+When you want to use `ESM` in `Node.js` without transpiling to `CommonJS` (that's what `jest`, `ava`, `tap` does),
+you have a couple problems to solve.
+
+🤷‍ What test runner does no transpiling to `CommonJS`?
+☝️ that's easy! 📼 [`Supertape`](https://github.com/coderaiser/supertape) supports `ESM` from the box;
+
+🤷‍  How to mock modules without [mock-require](https://github.com/boblauer/mock-require) (we in `ESM`!);
+☝️ that's solved! [`mock-import`](https://github.com/coderaiser/mock-import) does the thing using `loaders`;
+
+🤷‍  How to get coverage when `nyc` doesn't supported?
+☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query paramters`
+which are needed to load module again, and apply mocks.
+
+🤷‍  How to get coverage when mocks are used?
+☝️ Use 🎩 `ESCover`! It supports loaders, `ESM` and collects coverage as a loader!
 
 ## Install
 
 ```
-npm i escover -g
+npm i escover -D
 ```
 
-Then run using:
-
-```sh
-escover npm test
-```
-
-Or as [loader](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders):
+Run to collect coverage:
 
 ```sh
 NODE_OPTIONS="'--loader escover'" escover npm test
+```
+
+Run to show coverage report:
+
+```sh
+escover
 ```
 
 ## How it looks like?
@@ -38,6 +56,26 @@ When everything is covered:
 When some lines missing coverage:
 
 ![image](https://user-images.githubusercontent.com/1573141/147944130-9b901646-05ff-4a76-86c9-30631b0a0dd4.png)
+
+## What if I want to use with `mock-import`?
+
+Experimental `loaders` supports only one, for now. So [zenload](https://github.com/coderaiser/zenload) should be used.
+
+Install it with:
+
+```sh
+npm i escover mock-import zenload
+```
+
+Then run:
+
+```sh
+NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
+```
+
+This configuration will add coverage collectors and then apply mocks with help of `mock-import`.
+Of course the most comfortable way of doing this things will be [madrun](https://github.com/coderaiser/madrun).
+Run you `package-scripts` in `JavaScript` :)!
 
 ## License
 
