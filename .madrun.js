@@ -10,9 +10,9 @@ const testEnv = {
 
 export default {
     'loader': () => 'node --loader zenload',
-    'test': () => [testEnv, `tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`],
+    'test': async () => `./bin/escover.js npm test:only`,
     'test:only': () => `tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
-    'coverage': async () => `c8 ${await cutEnv('test')}`,
+    'coverage': async () => `c8 ${await cutEnv('test:only')}`,
     'c4': async () => [testEnv, `tape 'lib/instrument/**/*.spec.js' 'example/*.spec.js'`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),

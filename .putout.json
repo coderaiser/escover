@@ -1,6 +1,6 @@
 {
     "match": {
-        "report.js": {
+        "{report,cli}.js": {
             "remove-console": "off"
         }
     },

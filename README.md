@@ -20,6 +20,12 @@ npm i escover -g
 Then run using:
 
 ```sh
+escover npm test
+```
+
+Or as [loader](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders):
+
+```sh
 NODE_OPTIONS="'--loader escover'" escover npm test
 ```
 
