@@ -35,16 +35,10 @@ which are needed to load module again, and apply mocks.
 npm i escover -D
 ```
 
-Run to collect coverage:
+Run to collect and show coverage:
 
 ```sh
-NODE_OPTIONS="'--loader escover'" escover npm test
-```
-
-Run to show coverage report:
-
-```sh
-escover
+escover npm test
 ```
 
 ## How it looks like?
