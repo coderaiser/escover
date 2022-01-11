@@ -11,22 +11,22 @@
 
 Coverage for EcmaScript Modules based on 🐊[`Putout`](https://github.com/coderaiser/putout) and [loaders](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders).
 
-# Why another coverage tool?
+## Why another coverage tool?
 
 When you want to use `ESM` in `Node.js` without transpiling to `CommonJS` (that's what `jest`, `ava`, `tap` does),
 you have a couple problems to solve.
 
-🤷‍ What test runner does no transpiling to `CommonJS`?
+### 🤷‍ What test runner does no transpiling to `CommonJS`?
 ☝️ that's easy! 📼 [`Supertape`](https://github.com/coderaiser/supertape) supports `ESM` from the box;
 
-🤷‍  How to mock modules without [mock-require](https://github.com/boblauer/mock-require) (we in `ESM`!);
+### 🤷‍  How to mock modules without [mock-require](https://github.com/boblauer/mock-require) (we in `ESM`!);
 ☝️ that's solved! [`mock-import`](https://github.com/coderaiser/mock-import) does the thing using `loaders`;
 
-🤷‍  How to get coverage when `nyc` doesn't supported?
+### 🤷‍ How to get coverage when `nyc` doesn't supported?
 ☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query paramters`
 which are needed to load module again, and apply mocks.
 
-🤷‍  How to get coverage when mocks are used?
+### 🤷‍  How to get coverage when mocks are used?
 ☝️ Use 🎩 `ESCover`! It supports loaders, `ESM` and collects coverage as a loader!
 
 ## Install
@@ -57,7 +57,7 @@ When some lines missing coverage:
 
 ![image](https://user-images.githubusercontent.com/1573141/147944130-9b901646-05ff-4a76-86c9-30631b0a0dd4.png)
 
-## What if I want to use with `mock-import`?
+## What if I want to use 🎩`ESCover` with `mock-import`?
 
 Experimental `loaders` supports only one, for now. So [zenload](https://github.com/coderaiser/zenload) should be used.
 
