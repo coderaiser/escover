@@ -17,16 +17,20 @@ When you want to use `ESM` in `Node.js` without transpiling to `CommonJS` (that'
 you have a couple problems to solve.
 
 ### 🤷‍ What test runner does no transpiling to `CommonJS`?
+
 ☝️ that's easy! 📼 [`Supertape`](https://github.com/coderaiser/supertape) supports `ESM` from the box;
 
 ### 🤷‍  How to mock modules without [mock-require](https://github.com/boblauer/mock-require) (we in `ESM`!);
+
 ☝️ that's solved! [`mock-import`](https://github.com/coderaiser/mock-import) does the thing using `loaders`;
 
 ### 🤷‍ How to get coverage when `nyc` doesn't supported?
+
 ☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query paramters`
 which are needed to load module again, and apply mocks.
 
 ### 🤷‍  How to get coverage when mocks are used?
+
 ☝️ Use 🎩 `ESCover`! It supports loaders, `ESM` and collects coverage as a loader!
 
 ## Install
