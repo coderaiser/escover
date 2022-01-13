@@ -20,7 +20,7 @@ const coverageEnv = {
 
 export default {
     'test': () => `tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
-    'coverage': async () => [coverageEnv, `c8 ${await cutEnv('test')}`],
+    'coverage': async () => [coverageEnv, `c8 ${await run('test')}`],
     'c4': async () => [testEnv, `tape 'lib/instrument/**/*.spec.js' 'example/*.spec.js'`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
@@ -29,7 +29,7 @@ export default {
     'report': () => 'c8 report --reporter=lcov',
     'watcher': () => 'nodemon -w test -w lib --exec',
     
-    'watch:test': async () => await run('watcher', `"${await cutEnv('test')}"`, testEnv),
+    'watch:test': async () => await run('watcher', `"${await run('test')}"`, testEnv),
     
     'watch:lint': async () => await run('watcher', `'npm run lint'`),
     'watch:tape': () => 'nodemon -w test -w lib --exec tape',
