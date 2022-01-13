@@ -41,7 +41,7 @@
     "find-up": "^6.2.0",
     "montag": "^1.2.1",
     "once": "^1.4.0",
-    "putout": "^23.5.0",
+    "putout": "^24.0.2",
     "try-catch": "^3.0.0",
     "yargs-parser": "^21.0.0"
   },
