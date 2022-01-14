@@ -1,3 +1,9 @@
+2022.01.14, v1.2.1
+
+feature:
+- escover: exclude .spec.mjs
+
+
 2022.01.14, v1.2.0
 
 fix:
