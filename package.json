@@ -43,7 +43,8 @@
     "once": "^1.4.0",
     "putout": "^24.0.2",
     "try-catch": "^3.0.0",
-    "yargs-parser": "^21.0.0"
+    "yargs-parser": "^21.0.0",
+    "zenload": "^1.4.0"
   },
   "engines": {
     "node": ">=14"
@@ -58,7 +59,6 @@
     "eslint-plugin-putout": "^13.0.1",
     "madrun": "^8.8.1",
     "mock-import": "^2.0.0",
-    "supertape": "^6.0.5",
-    "zenload": "^1.0.0"
+    "supertape": "^6.0.5"
   }
 }
