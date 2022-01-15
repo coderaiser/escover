@@ -1,3 +1,10 @@
+2022.01.15, v1.3.0
+
+feature:
+- escover: exclude test
+- escover: config -> coverage
+
+
 2022.01.15, v1.2.3
 
 fix:
