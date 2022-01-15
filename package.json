@@ -39,6 +39,7 @@
     "chalk": "^5.0.0",
     "find-cache-dir": "^3.3.2",
     "find-up": "^6.2.0",
+    "mock-import": "^2.11.1",
     "montag": "^1.2.1",
     "once": "^1.4.0",
     "putout": "^24.0.2",
@@ -58,7 +59,6 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-putout": "^13.0.1",
     "madrun": "^8.8.1",
-    "mock-import": "^2.11.1",
     "supertape": "^6.0.5"
   }
 }
