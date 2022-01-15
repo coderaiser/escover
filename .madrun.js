@@ -19,7 +19,7 @@ const coverageEnv = {
 };
 
 export default {
-    'test': () => `tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
+    'test': () => `escover tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
     'coverage': async () => [coverageEnv, `c8 ${await run('test')}`],
     'c4': async () => [testEnv, `tape 'lib/instrument/**/*.spec.js' 'example/*.spec.js'`],
     'lint': () => 'putout .',
