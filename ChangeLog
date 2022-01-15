@@ -1,3 +1,9 @@
+2022.01.15, v1.2.3
+
+fix:
+- escover: mock-import: devDependency -> dependency
+
+
 2022.01.15, v1.2.2
 
 feature:
