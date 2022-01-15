@@ -58,7 +58,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-putout": "^13.0.1",
     "madrun": "^8.8.1",
-    "mock-import": "^2.0.0",
+    "mock-import": "^2.11.1",
     "supertape": "^6.0.5"
   }
 }
