@@ -3,25 +3,9 @@ import {
     cutEnv,
 } from 'madrun';
 
-const NODE_OPTIONS = `'--no-warnings --loader zenload'`;
-const ZENLOAD = [
-    'escover',
-    'mock-import',
-].join();
-
-const testEnv = {
-    NODE_OPTIONS,
-    ZENLOAD,
-};
-
-const coverageEnv = {
-    ZENLOAD: 'mock-import',
-};
-
 export default {
     'test': () => `escover tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
-    'coverage': async () => [coverageEnv, `c8 ${await run('test')}`],
-    'c4': async () => [testEnv, `tape 'lib/instrument/**/*.spec.js' 'example/*.spec.js'`],
+    'coverage': async () => `c8 ${await run('test')}`,
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
