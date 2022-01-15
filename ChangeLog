@@ -1,3 +1,9 @@
+2022.01.15, v1.3.4
+
+fix:
+- escover: rm useless import
+
+
 2022.01.15, v1.3.3
 
 feature:
