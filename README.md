@@ -53,11 +53,7 @@ escover npm test
 
 When everything is covered:
 
-![image](https://user-images.githubusercontent.com/1573141/147943954-ef708577-2856-4de0-9397-dead487b8c08.png)
-
-When some lines missing coverage:
-
-![image](https://user-images.githubusercontent.com/1573141/147944130-9b901646-05ff-4a76-86c9-30631b0a0dd4.png)
+![image](https://user-images.githubusercontent.com/1573141/149822261-ff9bc3b4-6ee4-452c-9ada-3cc922b630ec.png)
 
 ## What if I want to use 🎩`ESCover` with `mock-import`?
 
