@@ -5,7 +5,7 @@ const env = {
 };
 
 export default {
-    'test': () => `escover tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
+    'test': () => `bin/escover.js tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
     'coverage': async () => [env, `c8 ${await run('test')}`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),

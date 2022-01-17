@@ -42,6 +42,7 @@
     "mock-import": "^2.11.1",
     "montag": "^1.2.1",
     "once": "^1.4.0",
+    "picomatch": "^2.3.1",
     "putout": "^24.0.2",
     "table": "^6.8.0",
     "try-catch": "^3.0.0",

@@ -45,6 +45,10 @@ Run to collect and show coverage:
 escover npm test
 ```
 
+## Config
+
+`exclude` section of configuration file `.nyrc.json` supported. 
+
 ## How it looks like?
 
 When everything is covered:
