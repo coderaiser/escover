@@ -1,8 +1,12 @@
 import {run} from 'madrun';
 
+const env = {
+    ESCOVER_FORMAT: 'lines',
+};
+
 export default {
     'test': () => `escover tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
-    'coverage': async () => `c8 ${await run('test')}`,
+    'coverage': async () => [env, `c8 ${await run('test')}`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
