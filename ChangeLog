@@ -1,3 +1,9 @@
+2022.01.17, v1.7.1
+
+fix:
+- escover: config: rm once
+
+
 2022.01.17, v1.7.0
 
 feature:
