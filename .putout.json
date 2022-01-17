@@ -1,6 +1,6 @@
 {
     "match": {
-        "{report,cli}.js": {
+        "{formatters,cli}": {
             "remove-console": "off"
         }
     },

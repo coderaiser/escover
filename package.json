@@ -43,6 +43,7 @@
     "montag": "^1.2.1",
     "once": "^1.4.0",
     "putout": "^24.0.2",
+    "table": "^6.8.0",
     "try-catch": "^3.0.0",
     "yargs-parser": "^21.0.0",
     "zenload": "^1.4.0"
