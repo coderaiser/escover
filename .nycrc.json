@@ -3,7 +3,7 @@
     "all": false,
     "exclude": [
         "**/*.spec.js",
-        "**/fixture",
+        "fixture",
         "**/.*.js"
     ],
     "branches": 100,
