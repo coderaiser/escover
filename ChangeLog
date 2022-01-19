@@ -1,3 +1,10 @@
+2022.01.19, v1.9.0
+
+feature:
+- escover: formatters: files: add ability to cut lines, when count more then 10
+- escover: formatters returning a string
+
+
 2022.01.19, v1.8.1
 
 fix:
