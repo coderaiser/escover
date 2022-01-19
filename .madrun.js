@@ -13,8 +13,8 @@ export default {
     'fix:lint': () => run('lint', '--fix'),
     'report': () => 'c8 report --reporter=lcov',
     'watcher': () => 'nodemon -w test -w lib --exec',
-    
     'watch:lint': async () => await run('watcher', `'npm run lint'`),
     'watch:tape': () => 'nodemon -w test -w lib --exec tape',
+    'prewisdom': () => run(['lint', 'test']),
 };
 
