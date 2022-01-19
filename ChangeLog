@@ -1,3 +1,12 @@
+2022.01.19, v1.8.0
+
+fix:
+- chore: instrument: rm useless fixture
+
+feature:
+- escover: when one of expressions lin line not covered - line not covered
+
+
 2022.01.18, v1.7.2
 
 feature:
