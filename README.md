@@ -47,7 +47,7 @@ escover npm test
 
 ## Config
 
-`exclude` section of configuration file `.nyrc.json` supported. 
+`exclude` section of configuration file `.nyrc.json` supported.
 
 ## How it looks like?
 
