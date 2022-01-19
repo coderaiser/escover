@@ -59,6 +59,14 @@ When everything is covered:
 
 ![image](https://user-images.githubusercontent.com/1573141/149822261-ff9bc3b4-6ee4-452c-9ada-3cc922b630ec.png)
 
+## What formatters exists?
+
+There is two types of formatters:
+- `lines` adds links to each line;
+- `files` shows information in table;
+
+You can choose formatter with `ESCOVER_FORMAT` env variable.
+
 ## What if I want to use 🎩`ESCover` with `mock-import`?
 
 Experimental `loaders` supports only one, for now. So [zenload](https://github.com/coderaiser/zenload) should be used.
