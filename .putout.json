@@ -1,6 +1,6 @@
 {
     "match": {
-        "{formatters,cli}": {
+        "cli": {
             "remove-console": "off"
         }
     },
