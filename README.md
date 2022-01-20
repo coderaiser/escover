@@ -62,6 +62,7 @@ When everything is covered:
 ## What formatters exists?
 
 There is two types of formatters:
+
 - `lines` adds links to each line;
 - `files` shows information in table;
 
