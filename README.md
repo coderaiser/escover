@@ -31,11 +31,11 @@ which are needed to load module again, and apply mocks.
 
 ### 🤷‍  How to get coverage when mocks are used?
 
-☝️ Use 🎩 `ESCover`! It supports loaders, `ESM` and collects coverage as a loader!
+☝️ Use 🎩`ESCover`! It supports loaders, `ESM` and collects coverage as a loader!
 
 ### 🤷‍  What with [`coveralls`](https://coveralls.io/)? Does [`lcov`](https://github.com/StevenLooman/mocha-lcov-reporter) supported?
 
-☝️ Yes! When you run 🎩`ESCover` it creates coverage in own format and `lcov` in `coverage` directory, similar to `c8` and `nyc`.
+☝️ Sure! `coverage/lcov.info` is main coverage file for 🎩`ESCover`.
 
 ## Install
 
