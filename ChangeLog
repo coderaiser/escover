@@ -1,3 +1,11 @@
+2022.01.20, v1.13.0
+
+feature:
+- escover: add ability to read lcov
+- coverage-file: add ability to parse lcov
+- escover: mark: add support of break
+
+
 2022.01.19, v1.12.0
 
 feature:
