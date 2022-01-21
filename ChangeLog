@@ -1,3 +1,10 @@
+2022.01.21, v1.14.0
+
+feature:
+- escover: instrument: integrate with putout with crawling enabled
+- escover: format: files: add align center
+
+
 2022.01.20, v1.13.0
 
 feature:
