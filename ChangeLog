@@ -1,3 +1,9 @@
+2022.01.26, v1.15.0
+
+fix:
+- escover: logical: find up
+
+
 2022.01.21, v1.14.0
 
 feature:
