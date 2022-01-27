@@ -1,3 +1,9 @@
+2022.01.27, v1.17.0
+
+feature:
+- escover: improve ternary support: Identifier
+
+
 2022.01.27, v1.16.0
 
 feature:
