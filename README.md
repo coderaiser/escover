@@ -84,9 +84,48 @@ Then run:
 NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
 ```
 
-This configuration will add coverage collectors and then apply mocks with help of `mock-import`.
-Of course the most comfortable way of doing this things will be [madrun](https://github.com/coderaiser/madrun).
-Run you `package-scripts` in `JavaScript` :)!
+## What you should know about `lcov`
+
+Format used by 🎩`ESCover` located in `coverage/lcov.info`.
+
+- ☝️ *[`lcov`](https://github.com/linux-test-project/lcov) was created in `2002`, almost twenty years ago.*
+- ☝️ *Linux kernel developers created it to know what is going on with the coverage.*
+- ☝️ *It's written in `PERL` and has text based format.*
+- ☝️ *This is most popular coverage format of all times supported by a lot of tools (like [coveralls](https://coveralls.io)).*
+
+When you run your `ESM` application with:
+
+```sh
+escover npm test
+```
+
+You will receive something similar to:
+
+```sh
+SF:/Users/coderaiser/escover/lib/transform.js
+DA:1,1
+DA:3,1
+DA:7,1
+DA:9,1
+DA:10,1
+DA:12,1
+DA:24,1
+DA:25,1
+DA:27,1
+DA:28,1
+DA:29,1
+DA:32,1
+end_of_record
+```
+
+Where:
+- `SF` - is path to source;
+- `DA` - is line number, and count of running;
+- `end_of_record` latest recored for current file entry;
+
+The only thing that is differ from `lcov`: counters it `0` or `1`, if you have a reason to use "real" counters [create an issue](https://github.com/coderaiser/escover/issues/new).
+
+It can be added in one line of code, but I see no reason why it can be useful 🤷‍♂️.
 
 ## License
 
