@@ -1,3 +1,9 @@
+2022.02.10, v1.19.0
+
+feature:
+- escover: mark: add ability of IfCondition alternate as IfCondition
+
+
 2022.01.30, v1.18.0
 
 feature:
