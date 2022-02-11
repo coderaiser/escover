@@ -9,10 +9,10 @@ test('escover: exports: plugin', async (t) => {
 });
 
 test('escover: exports: instrument', async (t) => {
-    const exported = await import('escover');
+    const {instrument: exported} = await import('escover/instrument');
     const {instrument} = await import('../lib/instrument/index.js');
     
-    t.equal(exported.default, instrument);
+    t.equal(exported, instrument);
     t.end();
 });
 
