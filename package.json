@@ -13,6 +13,13 @@
     "type": "git",
     "url": "git://github.com/coderaiser/escover.git"
   },
+  "exports": {
+    ".": {
+      "import": "./lib/escover.js"
+    },
+    "./plugin": "./lib/instrument/plugin-mark/index.js",
+    "./instrument": "./lib/instrument/index.js"
+  },
   "keywords": [
     "coverage",
     "putout",
