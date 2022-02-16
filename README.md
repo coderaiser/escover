@@ -119,6 +119,7 @@ end_of_record
 ```
 
 Where:
+
 - `SF` - is path to source;
 - `DA` - is line number, and count of running;
 - `end_of_record` latest recored for current file entry;
