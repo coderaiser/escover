@@ -1,3 +1,15 @@
+2022.03.07, v2.0.2
+
+fix:
+- escover: mock-import: dependencies -> devDependencies
+
+
+feature:
+- package: eslint-plugin-putout v14.4.0
+- package: escover v2.0.1
+- package: mock-import v3.0.0
+
+
 2022.02.17, v2.0.1
 
 feature:
