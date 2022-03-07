@@ -59,13 +59,13 @@
   "license": "MIT",
   "devDependencies": {
     "@putout/test": "^5.0.0",
-    "mock-import": "^3.0.0",
     "c8": "^7.8.0",
     "escover": "^2.0.1",
     "eslint": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-putout": "^13.0.1",
+    "eslint-plugin-putout": "^14.4.0",
     "madrun": "^9.0.0",
+    "mock-import": "^3.0.0",
     "supertape": "^7.0.0"
   }
 }
