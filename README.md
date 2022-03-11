@@ -1,4 +1,4 @@
-# 🎩`ESCover` [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
+# 🎩ESCover [![License][LicenseIMGURL]][LicenseURL] [![NPM version][NPMIMGURL]][NPMURL] [![Build Status][BuildStatusIMGURL]][BuildStatusURL] [![Coverage Status][CoverageIMGURL]][CoverageURL]
 
 [NPMIMGURL]: https://img.shields.io/npm/v/escover.svg?style=flat
 [BuildStatusURL]: https://github.com/coderaiser/escover/actions?query=workflow%3A%22Node+CI%22 "Build Status"
@@ -9,7 +9,7 @@
 [CoverageURL]: https://coveralls.io/github/coderaiser/escover?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/escover/badge.svg?branch=master&service=github
 
-Coverage for EcmaScript Modules based on 🐊[`Putout`](https://github.com/coderaiser/putout) and [loaders](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders).
+Coverage for EcmaScript Modules based on 🐊[**Putout**](https://github.com/coderaiser/putout) and [loaders](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders).
 
 ## Why another coverage tool?
 
@@ -18,7 +18,7 @@ you have a couple problems to solve.
 
 ### 🤷‍ What test runner does no transpiling to `CommonJS`?
 
-☝️ that's easy! 📼 [`Supertape`](https://github.com/coderaiser/supertape) supports `ESM` from the box;
+☝️ that's easy! 📼 [**Supertape**](https://github.com/coderaiser/supertape) supports `ESM` from the box;
 
 ### 🤷‍  How to mock modules without [mock-require](https://github.com/boblauer/mock-require) (we in `ESM`!);
 
@@ -31,7 +31,7 @@ which are needed to load module again, and apply mocks.
 
 ### 🤷‍  How to get coverage when mocks are used?
 
-☝️ Use 🎩`ESCover`! It supports loaders, `ESM` and collects coverage as a loader!
+☝️ Use 🎩**ESCover**! It supports loaders, `ESM` and collects coverage as a loader!
 
 ### 🤷‍  What with [`coveralls`](https://coveralls.io/)? Does [`lcov`](https://github.com/StevenLooman/mocha-lcov-reporter) supported?
 
