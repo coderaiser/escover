@@ -124,7 +124,7 @@ Where:
 - `DA` - is line number, and count of running;
 - `end_of_record` latest recored for current file entry;
 
-The only thing that is differ from `lcov`: counters it `0` or `1`, if you have a reason to use "real" counters [create an issue](https://github.com/coderaiser/escover/issues/new).
+The only thing that is differ from `lcov`: counters are `0` or `1`, if you have a reason to use "real" counters [create an issue](https://github.com/coderaiser/escover/issues/new).
 
 It can be added in one line of code, but I see no reason why it can be useful 🤷‍♂️.
 
