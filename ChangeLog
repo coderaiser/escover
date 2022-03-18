@@ -1,3 +1,9 @@
+2022.03.18, v2.1.0
+
+feature:
+- escover: improve support of CallExpression without loc
+
+
 2022.03.07, v2.0.2
 
 fix:
