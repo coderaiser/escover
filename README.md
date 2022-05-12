@@ -84,7 +84,7 @@ Then run:
 NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
 ```
 
-## What you should know about `lcov`
+## What should I know about `lcov`?
 
 Format used by 🎩`ESCover` located in `coverage/lcov.info`.
 
