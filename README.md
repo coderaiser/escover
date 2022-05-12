@@ -35,7 +35,7 @@ which are needed to load module again, and apply mocks.
 
 ### 🤷‍  What with [`coveralls`](https://coveralls.io/)? Does [`lcov`](https://github.com/StevenLooman/mocha-lcov-reporter) supported?
 
-☝️ Sure! `coverage/lcov.info` is main coverage file for 🎩`ESCover`.
+☝️ Sure! `coverage/lcov.info` is main coverage file for 🎩**ESCover**.
 
 ## Install
 
