@@ -86,7 +86,7 @@ NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
 
 ## What should I know about `lcov`?
 
-Format used by 🎩`ESCover` located in `coverage/lcov.info`.
+Format used by 🎩**ESCover** located in `coverage/lcov.info`.
 
 - ☝️ *[`lcov`](https://github.com/linux-test-project/lcov) was created in `2002`, twenty years ago.*
 - ☝️ *Linux kernel developers created it to know what is going on with the coverage.*
