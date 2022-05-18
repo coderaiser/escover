@@ -49,8 +49,7 @@ Run to collect and show coverage:
 escover npm test
 ```
 
-
-## Comparisson with `c8`
+## Comparison with `c8`
 
 Check out the real example from [wisdom](https://github.com/coderaiser/wisdom). There is next uncovered code:
 
@@ -69,7 +68,6 @@ And here is what you will see with 🎩**ESCover**:
 <img width="403" alt="image" src="https://user-images.githubusercontent.com/1573141/169064550-62aa2398-b370-496f-8c8b-418d0d2d6004.png">
 
 So if you need more accurate code with no bullshit green 100%, use 🎩**ESCover** 😉.
-
 
 ## Config
 

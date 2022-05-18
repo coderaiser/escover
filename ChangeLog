@@ -334,7 +334,7 @@ feature:
 2022.01.08, v1.0.3
 
 feature:
-- escover: plugin-mark: add support ot ThrowStatement
+- escover: plugin-mark: add support of ThrowStatement
 - escover: add merger
 
 
