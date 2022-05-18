@@ -26,7 +26,7 @@ you have a couple problems to solve.
 
 ### 🤷‍ How to get coverage when `nyc` doesn't supported?
 
-☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query paramters`
+☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query parameters`
 which are needed to load module again, and apply mocks.
 
 ### 🤷‍  How to get coverage when mocks are used?
@@ -142,7 +142,7 @@ Where:
 
 - `SF` - is path to source;
 - `DA` - is line number, and count of running;
-- `end_of_record` latest recored for current file entry;
+- `end_of_record` latest recorded for current file entry;
 
 The only thing that is differ from `lcov`: counters are `0` or `1`, if you have a reason to use "real" counters [create an issue](https://github.com/coderaiser/escover/issues/new).
 
