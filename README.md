@@ -49,6 +49,28 @@ Run to collect and show coverage:
 escover npm test
 ```
 
+
+## Comparisson with `c8`
+
+Check out the real example from [wisdom](https://github.com/coderaiser/wisdom). There is next uncovered code:
+
+```js
+import jessy from 'jessy';
+
+export default (info) => typeof jessy('publishConfig.access', info) === 'undefined';
+```
+
+`c8` shows three columns with 100% and one with 0%.
+
+<img width="584" alt="image" src="https://user-images.githubusercontent.com/1573141/169064257-579d6770-095e-475b-a7bc-8275849c8dc2.png">
+
+And here is what you will see with 🎩**ESCover**:
+
+<img width="403" alt="image" src="https://user-images.githubusercontent.com/1573141/169064550-62aa2398-b370-496f-8c8b-418d0d2d6004.png">
+
+So if you need more accurate code with no bullshit green 100%, use 🎩**ESCover** 😉.
+
+
 ## Config
 
 `exclude` section of configuration file `.nyrc.json` supported.
