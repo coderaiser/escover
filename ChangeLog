@@ -1,3 +1,9 @@
+2022.05.30, v2.2.0
+
+feature:
+- escover: add support of ESCOVER_SUCCESS_EXIT_CODE
+
+
 2022.05.29, v2.1.3
 
 fix:
