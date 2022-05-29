@@ -95,13 +95,35 @@ Experimental `loaders` supports only one, for now. So [zenload](https://github.c
 Install it with:
 
 ```sh
-npm i escover mock-import zenload
+npm i escover
 ```
 
 Then run:
 
 ```sh
+escover npm test
+```
+
+This is the same as:
+
+```sh
 NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
+```
+
+## Env
+
+If you want to disable coverage on status code without erroring, use `ESCOVER_SUCCESS_EXIT_CODE`:
+
+```js
+import {SKIPED} from 'supertape/exit-codes';
+
+const env = {
+    ESCOVER_SUCCESS_EXIT_CODE: SKIPED,
+};
+
+export default {
+    'test': () => [env, `escover tape 'test/**/*.js' 'lib/**/*.spec.js'`],
+}
 ```
 
 ## What should I know about `lcov`?
