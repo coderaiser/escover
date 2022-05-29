@@ -122,8 +122,8 @@ const env = {
 };
 
 export default {
-    'test': () => [env, `escover tape 'test/**/*.js' 'lib/**/*.spec.js'`],
-}
+    test: () => [env, `escover tape 'test/**/*.js' 'lib/**/*.spec.js'`],
+};
 ```
 
 ## What should I know about `lcov`?
