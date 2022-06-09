@@ -115,10 +115,10 @@ NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
 If you want to disable coverage on status code without erroring, use `ESCOVER_SUCCESS_EXIT_CODE`:
 
 ```js
-import {SKIPED} from 'supertape/exit-codes';
+import {SKIPPED} from 'supertape/exit-codes';
 
 const env = {
-    ESCOVER_SUCCESS_EXIT_CODE: SKIPED,
+    ESCOVER_SUCCESS_EXIT_CODE: SKIPPED,
 };
 
 export default {
