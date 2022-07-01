@@ -11,7 +11,7 @@ const env = {
 
 const coverageEnv = {
     ESCOVER_FORMAT: 'lines',
-}
+};
 
 export default {
     'test': () => [env, `bin/escover.js tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`],
