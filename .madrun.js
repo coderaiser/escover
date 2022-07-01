@@ -1,19 +1,28 @@
-import {run} from 'madrun';
+import {
+    run,
+    cutEnv,
+} from 'madrun';
+import {SKIPED} from 'supertape/exit-codes';
 
 const env = {
-    ESCOVER_FORMAT: 'lines',
+    SUPERTAPE_CHECK_SKIPED: 1,
+    ESCOVER_SUCCESS_EXIT_CODE: SKIPED,
 };
 
+const coverageEnv = {
+    ESCOVER_FORMAT: 'lines',
+}
+
 export default {
-    'test': () => `bin/escover.js tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`,
-    'coverage': async () => [env, `c8 ${await run('test')}`],
+    'test': () => [env, `bin/escover.js tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`],
+    'coverage': async () => [coverageEnv, `c8 ${await cutEnv('test')}`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),
     'fix:lint': () => run('lint', '--fix'),
     'report': () => 'c8 report --reporter=lcov',
     'watcher': () => 'nodemon -w test -w lib --exec',
-    'watch:test': async () => await run('watcher', await run('test')),
+    'watch:test': async () => [env, await run('watcher', await cutEnv('test'))],
     'watch:lint': async () => await run('watcher', `'npm run lint'`),
     'watch:tape': () => 'nodemon -w test -w lib --exec tape',
     'prewisdom': () => run(['lint', 'test']),
