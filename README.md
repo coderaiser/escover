@@ -118,7 +118,7 @@ If you want to disable coverage on status code without erroring, use `ESCOVER_SU
 import {SKIPED} from 'supertape/exit-codes';
 
 const env = {
-    ESCOVER_SUCCESS_EXIT_CODE: SKIPPED,
+    ESCOVER_SUCCESS_EXIT_CODE: SKIPED,
 };
 
 export default {
