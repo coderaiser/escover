@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "chalk": "^5.0.0",
-    "find-cache-dir": "^3.3.2",
+    "find-cache-dir": "^4.0.0",
     "find-up": "^6.2.0",
     "mock-import": "^3.0.1",
     "montag": "^1.2.1",
