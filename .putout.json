@@ -1,4 +1,5 @@
 {
+    "printer": "putout",
     "match": {
         "cli": {
             "remove-console": "off"

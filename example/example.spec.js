@@ -7,4 +7,3 @@ test('c4: example: sum', (t) => {
     t.equal(result, 3);
     t.end();
 });
-

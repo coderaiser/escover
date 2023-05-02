@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 import {cli} from '../lib/cli/cli.js';
 import {readCoverage} from '../lib/coverage-file/coverage-file.js';
 import {readConfig} from '../lib/config.js';
@@ -10,4 +9,3 @@ cli({
     readCoverage,
     readConfig,
 });
-

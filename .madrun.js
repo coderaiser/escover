@@ -27,4 +27,3 @@ export default {
     'watch:tape': () => 'nodemon -w test -w lib --exec tape',
     'prewisdom': () => run(['lint', 'test']),
 };
-
