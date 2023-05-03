@@ -1,3 +1,9 @@
+2023.05.03, v3.0.0
+
+feature:
+- 49fca58 escover: use @putout/printer
+- 1dfbea6 escover: use @putout/printer
+
 2023.05.02, v2.5.3
 
 feature:
