@@ -1,3 +1,9 @@
+2023.05.05, v3.2.1
+
+feature:
+- 0c86858 escover: rm unused deps
+- 98ff5ae package: escover v3.2.0
+
 2023.05.05, v3.2.0
 
 feature:
