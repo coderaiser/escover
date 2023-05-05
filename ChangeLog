@@ -1,3 +1,8 @@
+2023.05.05, v3.2.0
+
+feature:
+- e483c58 escover: add suport of node v20 (https://nodejs.org/dist/latest-v20.x/docs/api/esm.html#globalpreload)
+
 2023.05.05, v3.1.2
 
 feature:
