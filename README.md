@@ -9,7 +9,7 @@
 [CoverageURL]: https://coveralls.io/github/coderaiser/escover?branch=master
 [CoverageIMGURL]: https://coveralls.io/repos/coderaiser/escover/badge.svg?branch=master&service=github
 
-Coverage for EcmaScript Modules based on 🐊[**Putout**](https://github.com/coderaiser/putout) and [loaders](https://nodejs.org/dist/latest-v16.x/docs/api/esm.html#loaders).
+Coverage for EcmaScript Modules based on 🐊[**Putout**](https://github.com/coderaiser/putout) and [loaders](https://nodejs.org/dist/latest-v20.x/docs/api/esm.html#loaders).
 
 ## Why another coverage tool?
 
