@@ -1,3 +1,8 @@
+2023.05.05, v3.1.2
+
+feature:
+- 520372c escover: improve support of OptionalChaining
+
 2023.05.05, v3.1.1
 
 fix:
