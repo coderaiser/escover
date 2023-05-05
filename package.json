@@ -39,8 +39,6 @@
     "prewisdom": "madrun prewisdom"
   },
   "dependencies": {
-    "@babel/parser": "^7.21.8",
-    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
     "@putout/plugin-convert-optional-to-logical": "^1.0.0",
     "@putout/printer": "^1.80.3",
     "chalk": "^5.0.0",
