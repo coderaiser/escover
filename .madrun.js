@@ -7,7 +7,6 @@ import {SKIPED} from 'supertape/exit-codes';
 const env = {
     SUPERTAPE_CHECK_SKIPED: 1,
     ESCOVER_SUCCESS_EXIT_CODE: SKIPED,
-    NODE_OPTIONS: `'--loader=./lib/escover.js --no-warnings'`,
 };
 
 const coverageEnv = {
