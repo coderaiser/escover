@@ -1,3 +1,11 @@
+2023.05.26, v3.3.0
+
+fix:
+- 18db2ed escover: cli
+
+feature:
+- 5409caa package: eslint-plugin-n v16.0.0
+
 2023.05.10, v3.2.4
 
 fix:
