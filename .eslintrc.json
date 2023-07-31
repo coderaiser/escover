@@ -7,7 +7,5 @@
         "putout",
         "n"
     ],
-    "ignorePatterns": [
-        "fixture"
-    ]
+    "ignorePatterns": ["fixture"]
 }
