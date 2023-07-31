@@ -1,3 +1,8 @@
+2023.07.31, v3.5.1
+
+fix:
+- ba6e405 escover: write coverage on exit -> write coverage each time
+
 2023.07.31, v3.5.0
 
 fix:
