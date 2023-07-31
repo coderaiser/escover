@@ -1,3 +1,15 @@
+2023.07.31, v3.5.0
+
+fix:
+- 2411d57 escover
+- 830082d escover: exit
+
+feature:
+- b6b1301 package: @putout/test v7.0.1
+- e9502cc package: c8 v8.0.1
+- 882431a package: eslint-plugin-putout v18.2.0
+- eb15154 package: putout v30.7.0
+
 2023.06.08, v3.4.0
 
 feature:
