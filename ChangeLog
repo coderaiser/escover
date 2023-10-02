@@ -1,3 +1,9 @@
+2023.10.02, v3.8.0
+
+feature:
+- 403e522 package: @putout/plugin-convert-optional-to-logical v3.1.0
+- b2fe53e package: eslint-plugin-putout v20.0.0
+
 2023.09.14, v3.7.0
 
 feature:
