@@ -39,7 +39,7 @@
     "prewisdom": "madrun prewisdom"
   },
   "dependencies": {
-    "@putout/plugin-convert-optional-to-logical": "^2.0.0",
+    "@putout/plugin-convert-optional-to-logical": "^3.1.0",
     "chalk": "^5.0.0",
     "find-cache-dir": "^5.0.0",
     "find-up": "^6.2.0",
