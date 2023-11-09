@@ -1,3 +1,9 @@
+2023.11.09, v3.8.1
+
+feature:
+- c5ac532 escover: putout v33.0.0
+- c3b1022 escover: eslint-plugin-putout v21.0.2
+
 2023.10.02, v3.8.0
 
 feature:
