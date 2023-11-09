@@ -16,6 +16,7 @@
     ".": {
       "import": "./lib/escover.js"
     },
+    "./fresh": "./lib/fresh.js",
     "./plugin": "./lib/instrument/plugin-mark/index.js",
     "./instrument": "./lib/instrument/index.js"
   },
@@ -64,7 +65,7 @@
     "escover": "^3.2.0",
     "eslint": "^8.3.0",
     "eslint-plugin-n": "^16.0.0",
-    "eslint-plugin-putout": "^20.0.0",
+    "eslint-plugin-putout": "^21.0.2",
     "madrun": "^9.0.0",
     "supertape": "^8.0.1"
   }
