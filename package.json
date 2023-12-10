@@ -17,6 +17,7 @@
       "import": "./lib/escover.js"
     },
     "./fresh": "./lib/fresh.js",
+    "./register": "./lib/register.js",
     "./plugin": "./lib/instrument/plugin-mark/index.js",
     "./instrument": "./lib/instrument/index.js"
   },
