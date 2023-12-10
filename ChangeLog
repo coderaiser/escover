@@ -1,3 +1,11 @@
+2023.12.10, v4.0.0
+
+feature:
+- c365383 convert to node v18 loaders
+- cc25857 escover: drop support of node < 18
+- 7cc297d escover: madrun v10.0.0
+- 3513811 escover: putout v34.0.0
+
 2023.11.09, v3.8.1
 
 feature:
