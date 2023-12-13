@@ -90,7 +90,7 @@ You can choose formatter with `ESCOVER_FORMAT` env variable.
 
 ## What if I want to use 🎩`ESCover` with `mock-import`?
 
-Experimental `loaders` supports only one, for now. So [zenload](https://github.com/coderaiser/zenload) should be used.
+[`mock-import`](https://github.com/coderaiser/mock-import) is used by default in 🎩`ESCover`.
 
 Install it with:
 
