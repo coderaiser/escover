@@ -62,7 +62,7 @@
   "devDependencies": {
     "@putout/test": "^7.0.1",
     "c8": "^8.0.1",
-    "escover": "^3.2.0",
+    "escover": "file:.",
     "eslint": "^8.3.0",
     "eslint-plugin-n": "^16.0.0",
     "eslint-plugin-putout": "^21.0.2",
