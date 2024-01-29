@@ -1,3 +1,13 @@
+2024.01.29, v4.1.0
+
+feature:
+- 51103b4 escover: find-up v7.0.0
+- 427406f escover: c8 v9.1.0
+- 0d53d2f escover: @putout/test v8.4.0
+- e6fde48 escover: eslint-plugin-putout v22.3.1
+- 4e58f46 escover: putout v35.0.1
+- f57fb20 escover: supertape v10.0.0
+
 2023.12.10, v4.0.1
 
 feature:
