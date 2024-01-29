@@ -60,7 +60,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@putout/test": "^7.0.1",
+    "@putout/test": "^8.4.0",
     "c8": "^8.0.1",
     "escover": "file:.",
     "eslint": "^8.3.0",
