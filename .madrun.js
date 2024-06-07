@@ -1,8 +1,5 @@
 import {SKIPED} from 'supertape/exit-codes';
-import {
-    run,
-    cutEnv,
-} from 'madrun';
+import {run, cutEnv} from 'madrun';
 
 const env = {
     SUPERTAPE_CHECK_SKIPED: 1,
