@@ -1,3 +1,10 @@
+2024.06.07, v4.2.0
+
+feature:
+- a14d18d escover: @putout/test v10.0.0
+- 1b1e4e9 escover: eslint v9.4.0
+- 21f9710 escover: picomatch v4.0.2
+
 2024.01.29, v4.1.0
 
 feature:
