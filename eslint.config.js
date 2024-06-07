@@ -5,7 +5,7 @@ import {
 import {safeAlign} from 'eslint-plugin-putout/config';
 
 export const match = {
-    '**/{fresh,register.js}': {
+    '**/{fresh,register}.js': {
         'n/no-unsupported-features/node-builtins': 'off',
     },
 };
