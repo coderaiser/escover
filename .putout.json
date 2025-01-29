@@ -6,11 +6,6 @@
         }
     },
     "rules": {
-        "putout": "on",
-        "putout/create-test": ["on", {
-            "add": [
-                ["printer", "putout"]
-            ]
-        }]
+        "putout": "on"
     }
 }
