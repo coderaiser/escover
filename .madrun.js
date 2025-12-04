@@ -1,9 +1,9 @@
-import {SKIPED} from 'supertape/exit-codes';
+import {SKIPPED} from 'supertape/exit-codes';
 import {run, cutEnv} from 'madrun';
 
 const env = {
-    SUPERTAPE_CHECK_SKIPED: 1,
-    ESCOVER_SUCCESS_EXIT_CODE: SKIPED,
+    SUPERTAPE_CHECK_SKIPPED: 1,
+    ESCOVER_SUCCESS_EXIT_CODE: SKIPPED,
 };
 
 const coverageEnv = {
