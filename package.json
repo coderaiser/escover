@@ -56,7 +56,7 @@
     "yargs-parser": "^22.0.0"
   },
   "engines": {
-    "node": ">=18.19"
+    "node": ">=20"
   },
   "license": "MIT",
   "devDependencies": {
