@@ -54,7 +54,7 @@ escover npm test
 Check out the real example from [wisdom](https://github.com/coderaiser/wisdom). There is next uncovered code:
 
 ```js
-import jessy from 'jessy';
+import {jessy} from 'jessy';
 
 export default (info) => typeof jessy('publishConfig.access', info) === 'undefined';
 ```

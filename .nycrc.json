@@ -3,10 +3,10 @@
     "all": false,
     "exclude": [
         "**/*.spec.js",
-        "fixture",
         "**/.*.js",
+        "**/*.config.*",
         "cli.js",
-        "**/*.config.*"
+        "fixture"
     ],
     "branches": 100,
     "lines": 100,
