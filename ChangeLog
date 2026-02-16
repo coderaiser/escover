@@ -1,3 +1,16 @@
+2026.02.16, v6.0.0
+
+feature:
+- c6cc685 escover: try-catch v4.0.9
+- f28ded5 escover: supertape v12.5.0
+- e32d7f7 escover: putout v42.0.1
+- 3be5766 escover: madrun v13.0.0
+- 1945243 escover: eslint-plugin-putout v31.0.0
+- ff9144f escover: eslint v10.0.0
+- 5622df5 escover: @putout/test v15.1.1
+- a4ac137 escover: @putout/eslint-flat v4.0.0
+- 2a8c42a escover: drop support of node < 22
+
 2025.12.04, v5.0.1
 
 feature:
