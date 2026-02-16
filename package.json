@@ -67,6 +67,6 @@
     "eslint": "^10.0.0",
     "eslint-plugin-putout": "^31.0.0",
     "madrun": "^13.0.0",
-    "supertape": "^11.3.1"
+    "supertape": "^12.5.0"
   }
 }
