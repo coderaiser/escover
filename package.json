@@ -66,7 +66,7 @@
     "escover": "file:.",
     "eslint": "^10.0.0",
     "eslint-plugin-putout": "^31.0.0",
-    "madrun": "^11.0.3",
+    "madrun": "^13.0.0",
     "supertape": "^11.3.1"
   }
 }
