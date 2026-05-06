@@ -1,3 +1,10 @@
+2026.05.06, v6.0.1
+
+feature:
+- 25d81ee escover: supertape v13.1.1
+- 1fbab60 escover: montag v2.0.1
+- 2836798 escover: c8 v11.0.0
+
 2026.02.16, v6.0.0
 
 feature:
