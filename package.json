@@ -46,7 +46,7 @@
     "find-cache-dir": "^5.0.0",
     "find-up": "^8.0.0",
     "mock-import": "^5.0.0",
-    "montag": "^1.2.1",
+    "montag": "^2.0.1",
     "once": "^1.4.0",
     "picomatch": "^4.0.2",
     "putout": "^42.0.1",
