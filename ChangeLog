@@ -1,3 +1,8 @@
+2026.05.07, v6.1.0
+
+feature:
+- 30ff84f escover: get rid of mock-import
+
 2026.05.06, v6.0.1
 
 feature:
