@@ -20,10 +20,6 @@ you have a couple problems to solve.
 
 ☝️ that's easy! 📼 [**Supertape**](https://github.com/coderaiser/supertape) supports `ESM` from the box;
 
-### 🤷‍  How to mock modules without [mock-require](https://github.com/boblauer/mock-require) (we in `ESM`!);
-
-☝️ that's solved! [`mock-import`](https://github.com/coderaiser/mock-import) does the thing using `loaders`;
-
 ### 🤷‍ How to get coverage when `nyc` doesn't supported?
 
 ☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query parameters`
@@ -87,28 +83,6 @@ There is two types of formatters:
 - `files` shows information in table;
 
 You can choose formatter with `ESCOVER_FORMAT` env variable.
-
-## What if I want to use 🎩`ESCover` with `mock-import`?
-
-[`mock-import`](https://github.com/coderaiser/mock-import) is used by default in 🎩`ESCover`.
-
-Install it with:
-
-```sh
-npm i escover
-```
-
-Then run:
-
-```sh
-escover npm test
-```
-
-This is the same as:
-
-```sh
-NODE_OPTIONS="'--loader zenlend'" ZENLOAD='escover,mock-import' escover npm test
-```
 
 ## Env
 
