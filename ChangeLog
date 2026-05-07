@@ -1,3 +1,8 @@
+2026.05.07, v6.1.1
+
+fix:
+- 2797fee escover: cli: keep NODE_OPTIONS
+
 2026.05.07, v6.1.0
 
 feature:
