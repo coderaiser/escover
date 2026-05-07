@@ -1,3 +1,16 @@
+2026.05.08, v6.2.0
+
+fix:
+- fd9af89 escover: cli: no NODE_OPTIONS
+
+feature:
+- 424a044 escover: --help: add
+- 94d2b1c responsive: skipFull
+- 8b031eb responsive: indent
+- a9fee50 escover: formatters: responsive: add
+- 69a41a2 escover: formatters: improve colors
+- 9685940 formatters: files: colors
+
 2026.05.07, v6.1.2
 
 feature:
