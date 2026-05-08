@@ -1,3 +1,8 @@
+2026.05.08, v6.2.3
+
+feature:
+- f7e30ca escover: formatters: responsive: rm trailing shash
+
 2026.05.08, v6.2.2
 
 fix:
