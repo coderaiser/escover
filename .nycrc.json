@@ -1,6 +1,6 @@
 {
     "skipFull": false,
-    "check-coverage": false,
+    "checkCoverage": false,
     "all": false,
     "exclude": [
         "**/*.spec.js",
