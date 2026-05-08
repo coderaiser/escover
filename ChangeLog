@@ -1,3 +1,8 @@
+2026.05.08, v6.2.2
+
+fix:
+- 3b5e98e formatters: responsive: directory green when 100%
+
 2026.05.08, v6.2.1
 
 feature:
