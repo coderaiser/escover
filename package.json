@@ -1,6 +1,6 @@
 {
   "name": "escover",
-  "version": "6.2.6",
+  "version": "6.2.7",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "Coverage for EcmaScript Modules",
   "main": "lib/escover.js",
