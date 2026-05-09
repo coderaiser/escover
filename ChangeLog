@@ -1,3 +1,9 @@
+2026.05.09, v6.2.8
+
+feature:
+- e796d5f formatters: responsive: trancuteLeft filename when no place on screen
+- 6bcf251 formatters: responsive: build-grouped-table: pass object
+
 2026.05.09, v6.2.7
 
 feature:
