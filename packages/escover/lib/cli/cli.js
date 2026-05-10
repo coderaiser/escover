@@ -93,4 +93,3 @@ function execute(cmd, exit) {
         return exit(1);
     }
 }
-

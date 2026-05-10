@@ -13,9 +13,7 @@
     "url": "git+https://github.com/coderaiser/escover.git"
   },
   "exports": {
-    ".": {
-      "import": "./lib/escover.js"
-    },
+    ".": "./lib/escover.js",
     "./register": "./lib/register.js",
     "./plugin": "./lib/instrument/plugin-mark/index.js",
     "./instrument": "./lib/instrument/index.js"
