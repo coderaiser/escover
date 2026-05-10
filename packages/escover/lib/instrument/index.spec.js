@@ -1,9 +1,9 @@
 import {readFileSync} from 'node:fs';
 import {join, dirname} from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {test} from 'supertape';
 import {montag} from 'montag';
 import {tryCatch} from 'try-catch';
+import {test} from 'supertape';
 import {instrument} from './index.js';
 
 const __filename = fileURLToPath(import.meta.url);

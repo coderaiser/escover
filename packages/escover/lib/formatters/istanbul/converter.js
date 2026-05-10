@@ -1,0 +1,65 @@
+export function fromIstanbul(coverageMap) {
+    const result = [];
+    
+    for (const [name, file] of Object.entries(coverageMap)) {
+        const lines = {};
+        
+        for (const [id, count] of Object.entries(file.s)) {
+            const stmt = file.statementMap[id];
+            
+            for (let {line} = stmt.start; line <= stmt.end.line; line++)
+                lines[line] ||= count > 0 ? 1 : 0;
+        }
+        
+        result.push({
+            name,
+            lines,
+        });
+    }
+    
+    return result;
+}
+
+import path from 'node:path';
+import process from 'node:process';
+
+export function toIstanbul(files) {
+    const out = {};
+    
+    for (const file of files) {
+        const statementMap = {};
+        const s = {};
+        
+        let i = 0;
+        
+        for (const [line, covered] of Object.entries(file.lines)) {
+            statementMap[i] = {
+                start: {
+                    line: Number(line),
+                    column: 0,
+                },
+                end: {
+                    line: Number(line),
+                    column: 999,
+                },
+            };
+            
+            s[i] = covered;
+            i++;
+        }
+        
+        const relativePath = path.relative(process.cwd(), file.name);
+        
+        out[relativePath] = {
+            path: relativePath,
+            statementMap,
+            fnMap: {},
+            branchMap: {},
+            s,
+            f: {},
+            b: {},
+        };
+    }
+    
+    return out;
+}

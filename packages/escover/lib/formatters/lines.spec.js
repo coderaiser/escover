@@ -1,6 +1,6 @@
-import {test} from 'supertape';
 import {montag} from 'montag';
 import chalk from 'chalk';
+import {test} from 'supertape';
 import lines from './lines.js';
 
 test('escover: formatter: lines', (t) => {

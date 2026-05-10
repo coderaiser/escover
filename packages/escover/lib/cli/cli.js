@@ -6,6 +6,7 @@ import {version} from './version.js';
 import reportLines from '../formatters/lines.js';
 import reportFiles from '../formatters/files.js';
 import reportResponsive from '../formatters/responsive/responsive.js';
+import reportIstanbul from '../formatters/istanbul/index.js';
 import {readConfig} from '../config.js';
 import {help} from './help.js';
 
@@ -30,7 +31,7 @@ export const cli = ({argv, exit, readCoverage}) => {
             h: 'help',
         },
         default: {
-            'format': ESCOVER_FORMAT || 'responsive',
+            'format': ESCOVER_FORMAT || 'istanbul',
             'skip-full': skipFull,
         },
     });
@@ -65,6 +66,8 @@ export const cli = ({argv, exit, readCoverage}) => {
         output = reportResponsive(coverage, {
             skipFull: args.skipFull,
         });
+    else if (args.format === 'istanbul')
+        output = reportIstanbul(coverage);
     else
         output = reportFiles(coverage);
     

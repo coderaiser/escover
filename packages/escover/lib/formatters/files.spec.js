@@ -1,5 +1,5 @@
-import {test} from 'supertape';
 import stripAnsi from 'strip-ansi';
+import {test} from 'supertape';
 import formatFiles, {
     formatLines,
     getLinesPercent,

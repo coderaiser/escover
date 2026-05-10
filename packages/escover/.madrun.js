@@ -11,7 +11,7 @@ const coverageEnv = {
 };
 
 export default {
-    'test': () => [env, `escover tape 'packages/**/test/*.js' 'packages/*/lib/**/*.spec.js'`],
+    'test': () => [env, `bin/escover.js tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`],
     'coverage': async () => [coverageEnv, `c8 ${await cutEnv('test')}`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),

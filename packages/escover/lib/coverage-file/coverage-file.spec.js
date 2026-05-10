@@ -1,5 +1,5 @@
-import {test, stub} from 'supertape';
 import {montag} from 'montag';
+import {test, stub} from 'supertape';
 import {readCoverage, writeCoverage} from './coverage-file.js';
 
 const {isArray} = Array;
