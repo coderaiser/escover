@@ -2,11 +2,11 @@ import {execSync} from 'node:child_process';
 import process from 'node:process';
 import {tryCatch} from 'try-catch';
 import yargsParser from 'yargs-parser';
+import reportIstanbul from '@escover/istanbul';
 import {version} from './version.js';
 import reportLines from '../formatters/lines.js';
 import reportFiles from '../formatters/files.js';
 import reportResponsive from '../formatters/responsive/responsive.js';
-import reportIstanbul from '../formatters/istanbul/index.js';
 import {readConfig} from '../config.js';
 import {help} from './help.js';
 
@@ -93,3 +93,4 @@ function execute(cmd, exit) {
         return exit(1);
     }
 }
+

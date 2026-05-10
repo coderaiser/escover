@@ -1,24 +1,13 @@
 {
-  "name": "escover",
-  "version": "6.2.9",
+  "name": "@escover/istanbul",
+  "version": "1.0.0",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
-  "description": "Coverage for EcmaScript Modules",
-  "main": "packages/escover/lib/escover.js",
+  "description": "Istanbul converter",
+  "exports": "./lib/istanbul.js",
   "type": "module",
-  "bin": {
-    "escover": "bin/escover.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderaiser/escover.git"
-  },
-  "exports": {
-    ".": {
-      "import": "./lib/escover.js"
-    },
-    "./register": "./lib/register.js",
-    "./plugin": "./lib/instrument/plugin-mark/index.js",
-    "./instrument": "./lib/instrument/index.js"
   },
   "keywords": [
     "coverage",
@@ -54,8 +43,7 @@
     "strip-ansi": "^7.0.1",
     "table": "^6.8.0",
     "try-catch": "^4.0.9",
-    "yargs-parser": "^22.0.0",
-    "@escover/istanbul": "^1.0.0"
+    "yargs-parser": "^22.0.0"
   },
   "engines": {
     "node": ">=22"
