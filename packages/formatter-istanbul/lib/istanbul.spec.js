@@ -49,4 +49,3 @@ test('@escover/istanbul: no overrides', (t) => {
     t.equal(error.message, `☝️Looks like 'coverageFile' is not an array.`);
     t.end();
 });
-

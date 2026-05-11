@@ -22,5 +22,5 @@ ESCOVER_FORMAT='istanbul' escover npm test
 ```
 
 ## License
-MIT
 
+MIT

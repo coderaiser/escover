@@ -72,7 +72,6 @@ export const cli = async ({argv, exit, readCoverage}) => {
     else
         output = reportFiles(coverage);
      */
-    
     process.stdout.write(output);
 };
 
