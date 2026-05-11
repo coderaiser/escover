@@ -2,11 +2,7 @@ import {execSync} from 'node:child_process';
 import process from 'node:process';
 import {tryCatch} from 'try-catch';
 import yargsParser from 'yargs-parser';
-import reportIstanbul from '@escover/istanbul';
 import {version} from './version.js';
-import reportLines from '../formatters/lines.js';
-import reportFiles from '../formatters/files.js';
-import reportResponsive from '../formatters/responsive/responsive.js';
 import {readConfig} from '../config.js';
 import {help} from './help.js';
 
@@ -20,7 +16,7 @@ export const createNodeOptions = (options = NODE_OPTIONS || '') => {
     return options;
 };
 
-export const cli = ({argv, exit, readCoverage}) => {
+export const cli = async ({argv, exit, readCoverage}) => {
     const {skipFull} = readConfig();
     const args = yargsParser(argv.slice(2), {
         string: ['format'],
@@ -58,8 +54,13 @@ export const cli = ({argv, exit, readCoverage}) => {
     
     const coverage = readCoverage();
     
-    let output = '';
+    const {default: report} = await import(`@escover/formatter-${args.format}`);
     
+    const output = report(coverage, {
+        skipFull,
+    });
+    
+    /*
     if (args.format === 'lines')
         output = reportLines(coverage);
     else if (args.format === 'responsive')
@@ -70,6 +71,7 @@ export const cli = ({argv, exit, readCoverage}) => {
         output = reportIstanbul(coverage);
     else
         output = reportFiles(coverage);
+     */
     
     process.stdout.write(output);
 };

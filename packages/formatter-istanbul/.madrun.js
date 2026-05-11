@@ -7,12 +7,12 @@ const env = {
 };
 
 const coverageEnv = {
-    ESCOVER_FORMAT: 'responsive',
+    ESCOVER_FORMAT: 'istanbul',
 };
 
 export default {
-    'test': () => [env, `escover tape 'packages/**/test/*.js' 'packages/*/lib/**/*.spec.js'`],
-    'coverage': async () => [coverageEnv, `c8 ${await cutEnv('test')}`],
+    'test': () => [env, `tape 'test/**/*.js' 'lib/**/*.spec.js' 'example/*.spec.js'`],
+    'coverage': async () => [coverageEnv, `escover ${await cutEnv('test')}`],
     'lint': () => 'putout .',
     'fresh:lint': () => run('lint', '--fresh'),
     'lint:fresh': () => run('lint', '--fresh'),

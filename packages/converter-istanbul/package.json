@@ -1,9 +1,9 @@
 {
-  "name": "@escover/istanbul",
+  "name": "@escover/converter-istanbul",
   "version": "1.0.0",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
   "description": "Istanbul converter",
-  "exports": "./lib/istanbul.js",
+  "exports": "./lib/converter.js",
   "type": "module",
   "repository": {
     "type": "git",
@@ -53,7 +53,7 @@
     "@putout/eslint-flat": "^4.0.0",
     "@putout/test": "^15.1.1",
     "c8": "^11.0.0",
-    "escover": "file:.",
+    "escover": "^6.2.9",
     "eslint": "^10.0.0",
     "eslint-plugin-putout": "^31.0.0",
     "madrun": "^13.0.0",

@@ -1,22 +1,13 @@
 {
-  "name": "escover",
-  "version": "6.2.9",
+  "name": "@escover/formatter-istanbul",
+  "version": "1.0.0",
   "author": "coderaiser <mnemonic.enemy@gmail.com> (https://github.com/coderaiser)",
-  "description": "Coverage for EcmaScript Modules",
-  "main": "packages/escover/lib/escover.js",
+  "description": "Istanbul converter",
+  "exports": "./lib/istanbul.js",
   "type": "module",
-  "bin": {
-    "escover": "bin/escover.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderaiser/escover.git"
-  },
-  "exports": {
-    ".": "./lib/escover.js",
-    "./register": "./lib/register.js",
-    "./plugin": "./lib/instrument/plugin-mark/index.js",
-    "./instrument": "./lib/instrument/index.js"
   },
   "keywords": [
     "coverage",
@@ -38,10 +29,13 @@
     "prewisdom": "madrun prewisdom"
   },
   "dependencies": {
-    "@putout/plugin-convert-optional-to-logical": "^4.0.0",
     "chalk": "^5.0.0",
+    "@escover/converter-istanbul": "^1.0.0",
     "find-cache-dir": "^5.0.0",
     "find-up": "^8.0.0",
+    "istanbul-lib-coverage": "^3.2.2",
+    "istanbul-lib-report": "^3.0.1",
+    "istanbul-reports": "^3.2.0",
     "montag": "^2.0.1",
     "once": "^1.4.0",
     "picomatch": "^4.0.2",
@@ -59,7 +53,7 @@
     "@putout/eslint-flat": "^4.0.0",
     "@putout/test": "^15.1.1",
     "c8": "^11.0.0",
-    "escover": "file:.",
+    "escover": "^6.2.9",
     "eslint": "^10.0.0",
     "eslint-plugin-putout": "^31.0.0",
     "madrun": "^13.0.0",
