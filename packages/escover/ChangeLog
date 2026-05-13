@@ -1,3 +1,15 @@
+2026.05.13, v6.3.0
+
+fix:
+- 895b192 @escover/formatter-lines: badges
+
+feature:
+- c7460f1 escover: move out formatters
+- f03afbb @escover/formatter-responsive: move out
+- 06462d6 escover: formatter-istanbul: move out
+- 9afc535 @escover/istanbul: move out
+- 9f2930e escover: convert to monorepo
+
 2026.05.09, v6.2.9
 
 feature:
