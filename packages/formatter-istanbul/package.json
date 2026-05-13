@@ -5,6 +5,9 @@
   "description": "Istanbul converter",
   "exports": "./lib/istanbul.js",
   "type": "module",
+  "tag": false,
+  "changelog": false,
+  "release": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderaiser/escover.git"
@@ -58,5 +61,8 @@
     "eslint-plugin-putout": "^31.0.0",
     "madrun": "^13.0.0",
     "supertape": "^13.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
