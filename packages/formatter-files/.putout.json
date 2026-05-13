@@ -1,0 +1,11 @@
+{
+    "printer": "putout",
+    "match": {
+        "cli": {
+            "remove-console": "off"
+        }
+    },
+    "rules": {
+        "putout": "on"
+    }
+}
