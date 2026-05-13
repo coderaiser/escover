@@ -38,6 +38,8 @@
     "prewisdom": "madrun prewisdom"
   },
   "dependencies": {
+    "@escover/formatter-files": "^1.0.1",
+    "@escover/formatter-lines": "^1.0.1",
     "@putout/plugin-convert-optional-to-logical": "^4.0.0",
     "chalk": "^5.0.0",
     "find-cache-dir": "^5.0.0",
