@@ -5,6 +5,9 @@
   "description": "Istanbul converter",
   "exports": "./lib/files.js",
   "type": "module",
+  "tag": false,
+  "changelog": false,
+  "release": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/coderaiser/escover.git"
