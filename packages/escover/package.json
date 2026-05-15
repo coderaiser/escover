@@ -41,7 +41,6 @@
     "@escover/formatter-files": "^1.0.1",
     "@escover/formatter-lines": "^1.0.1",
     "@putout/plugin-convert-optional-to-logical": "^4.0.0",
-    "chalk": "^5.0.0",
     "find-cache-dir": "^5.0.0",
     "find-up": "^8.0.0",
     "montag": "^2.0.1",
@@ -49,7 +48,6 @@
     "picomatch": "^4.0.2",
     "putout": "^42.0.1",
     "strip-ansi": "^7.0.1",
-    "table": "^6.8.0",
     "try-catch": "^4.0.9",
     "yargs-parser": "^22.0.0"
   },
