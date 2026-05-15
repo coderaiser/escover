@@ -1,3 +1,17 @@
+2026.05.15, v6.3.1
+
+fix:
+- 37b6a58 @escover/converter-istanbul: fromIstanbul: simplify
+- b62bfb5 badges
+- 1ee7c61 @escover/formatter-istanbul: rm unused dependencies
+
+feature:
+- 89c7532 escover: rm unused dependencies
+- 4c3f305 @escover/formatter-files: table v6.9.0
+- ece5db7 @escover/formatter-files: strip-ansi v7.2.0
+- 96b7a5d @escover/formatter-istanbul: try-catch v4.0.9
+- 053b3f8 @escover/converter-istanbul: fromIstanbul: improve support
+
 2026.05.13, v6.3.0
 
 fix:
