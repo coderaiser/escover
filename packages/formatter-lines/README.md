@@ -22,5 +22,5 @@ ESCOVER_FORMAT='lines' escover npm test
 ```
 
 ## License
-MIT
 
+MIT

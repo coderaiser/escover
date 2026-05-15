@@ -22,5 +22,5 @@ ESCOVER_FORMAT='files' escover npm test
 ```
 
 ## License
-MIT
 
+MIT

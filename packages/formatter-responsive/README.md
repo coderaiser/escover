@@ -22,5 +22,5 @@ ESCOVER_FORMAT='responsive' escover npm test
 ```
 
 ## License
-MIT
 
+MIT

@@ -116,17 +116,32 @@ test('escover: converter-istanbul: fromIstanbul: with CoverageMap class', async 
         path: '/path/file.js',
         statementMap: {
             0: {
-                start: {line: 1, column: 0},
-                end: {line: 1, column: 10},
+                start: {
+                    line: 1,
+                    column: 0,
+                },
+                end: {
+                    line: 1,
+                    column: 10,
+                },
             },
             1: {
-                start: {line: 3, column: 0},
-                end: {line: 3, column: 10},
+                start: {
+                    line: 3,
+                    column: 0,
+                },
+                end: {
+                    line: 3,
+                    column: 10,
+                },
             },
         },
         fnMap: {},
         branchMap: {},
-        s: {0: 1, 1: 0},
+        s: {
+            0: 1,
+            1: 0,
+        },
         f: {},
         b: {},
     });
