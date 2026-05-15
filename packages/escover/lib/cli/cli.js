@@ -27,7 +27,7 @@ export const cli = async ({argv, exit, readCoverage}) => {
             h: 'help',
         },
         default: {
-            'format': ESCOVER_FORMAT || 'istanbul',
+            'format': ESCOVER_FORMAT || 'responsive',
             'skip-full': skipFull,
         },
     });
