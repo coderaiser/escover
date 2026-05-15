@@ -1,3 +1,8 @@
+2026.05.15, v6.3.2
+
+fix:
+- 823bd51 escover: cli: default formatter: responsive
+
 2026.05.15, v6.3.1
 
 fix:
