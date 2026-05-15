@@ -1,6 +1,6 @@
 export function fromIstanbul(coverageMap) {
     const result = [];
-    const data = coverageMap.data || coverageMap;
+    const {data} = coverageMap;
     
     for (const [name, file] of Object.entries(data)) {
         const lines = {};
@@ -64,3 +64,4 @@ export function toIstanbul(files) {
     
     return out;
 }
+
