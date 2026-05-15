@@ -1,7 +1,8 @@
 export function fromIstanbul(coverageMap) {
     const result = [];
+    const data = coverageMap.data || coverageMap;
     
-    for (const [name, file] of Object.entries(coverageMap)) {
+    for (const [name, file] of Object.entries(data)) {
         const lines = {};
         
         for (const [id, count] of Object.entries(file.s)) {
