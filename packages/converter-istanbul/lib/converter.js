@@ -66,4 +66,3 @@ export function toIstanbul(files) {
     
     return out;
 }
-
