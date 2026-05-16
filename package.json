@@ -31,10 +31,10 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "c8": "^11.0.0",
     "eslint": "^10.0.0",
     "eslint-plugin-putout": "^31.0.0",
     "madrun": "^13.0.0",
+    "superc8": "^12.7.0",
     "supertape": "^13.1.1"
   },
   "workspaces": [

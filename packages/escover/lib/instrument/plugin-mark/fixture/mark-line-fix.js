@@ -4,11 +4,10 @@ const a = () => {
 };
 
 function x() {
-    if (a > 2) {
+    if (a > 2)
         (__c4['🧨'](9, 14), a());
-    } else {
+    else
         (__c4['🧨'](10, 9), b());
-    }
 }
 
 for (const x of y) {

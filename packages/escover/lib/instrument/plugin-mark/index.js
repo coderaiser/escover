@@ -108,6 +108,13 @@ export const fix = (path, {options}) => {
             path.node,
         ]);
     
+    if (path.isExpressionStatement()) {
+        const expressionPath = path.get('expression');
+        replaceWith(expressionPath, sequenceExpression([lineNode, expressionPath.node]));
+        
+        return;
+    }
+    
     if (path.isExpression()) {
         const {node} = path;
         

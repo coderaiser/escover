@@ -71,6 +71,10 @@ test('escover: instrument: mark: transform: array', ({transform}) => {
     transform('array');
 });
 
+test('escover: instrument: mark: transform: delete', ({transform}) => {
+    transform('delete');
+});
+
 test('escover: instrument: mark: transform: named export: no report after transform', ({noReportAfterTransform}) => {
     noReportAfterTransform('named-export');
 });
