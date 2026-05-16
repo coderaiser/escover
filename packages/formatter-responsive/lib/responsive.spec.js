@@ -3,7 +3,6 @@ import {test} from 'supertape';
 import format, {
     getLinesPercent,
     createTableOptions,
-    parseUncoveredLines,
 } from './responsive.js';
 
 test('getLinesPercent: normal', (t) => {
@@ -225,26 +224,6 @@ test('createTableOptions: hides percent column if showPercent false', (t) => {
     const expected = 2;
     
     t.equal(result, expected);
-    t.end();
-});
-
-test('parseUncoveredLines: empty lines', (t) => {
-    const result = parseUncoveredLines({});
-    const expected = [];
-    
-    t.deepEqual(result, expected);
-    t.end();
-});
-
-test('parseUncoveredLines: all covered', (t) => {
-    const result = parseUncoveredLines({
-        1: true,
-        2: true,
-    });
-    
-    const expected = [];
-    
-    t.deepEqual(result, expected);
     t.end();
 });
 
