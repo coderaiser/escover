@@ -20,4 +20,3 @@ test('escover: formatter-responsive: parseUncoveredLines: all covered', (t) => {
     t.deepEqual(result, expected);
     t.end();
 });
-

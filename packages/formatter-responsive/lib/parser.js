@@ -37,4 +37,3 @@ export function parseUncoveredLines(lines) {
     
     return out;
 }
-
