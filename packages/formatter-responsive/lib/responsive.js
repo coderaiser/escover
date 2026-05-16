@@ -4,23 +4,30 @@ import {
     getBorderCharacters,
 } from 'table';
 import {buildGroupedTable} from './build-grouped-table.js';
+import {calculate} from './calculator.js';
 
-const CWD = process.cwd();
+const {cwd, stdout} = process;
+const CWD = cwd();
 const {entries, keys} = Object;
 
-export default (coverageFile, {skipFull = false} = {}) => {
+export default (coverageFile, overrides = {}) => {
+    const {
+        skipFull = false,
+        columns = stdout.columns,
+    } = overrides;
+    
     const files = parseCoverageFile(coverageFile, skipFull);
     
     if (skipFull && !files.length)
         return '💪 coverage 100%, good job!\n';
     
-    const totalWidth = process.stdout.columns || 80;
-    const showPercent = totalWidth >= 70;
+    const {
+        showPercent,
+        linesColWidth,
+        percentColWidth,
+        fileColWidth,
+    } = calculate(columns);
     
-    const linesColWidth = Math.floor(totalWidth / 2);
-    const percentColWidth = showPercent ? 7 : 0;
-    
-    const fileColWidth = Math.max(10, totalWidth - linesColWidth - percentColWidth - 6 - 4);
     const tableData = buildGroupedTable({
         files,
         showPercent,

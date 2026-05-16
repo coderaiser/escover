@@ -1,4 +1,3 @@
-import process from 'node:process';
 import {stripVTControlCharacters as stripAnsi} from 'node:util';
 import {test} from 'supertape';
 import format, {
@@ -162,34 +161,42 @@ test('format: trim branch executed for multiple long folders', (t) => {
 });
 
 test('format: percent column enabled when width >= 70', (t) => {
-    const original = process.stdout.columns;
+    const overrides = {
+        columns: 120,
+    };
     
-    process.stdout.columns = 120;
-    const result = stripAnsi(format([{
+    const coverageFile = [{
         name: 'hello.js',
         lines: {
             1: false,
         },
-    }]));
+    }];
     
-    process.stdout.columns = original;
+    const result = stripAnsi(format(
+        coverageFile,
+        overrides,
+    ));
     
     t.match(result, '%');
     t.end();
 });
 
 test('format: percent column disabled when width < 70', (t) => {
-    const original = process.stdout.columns;
+    const overrides = {
+        columns: 60,
+    };
     
-    process.stdout.columns = 60;
-    const result = stripAnsi(format([{
+    const coverageFile = [{
         name: 'hello.js',
         lines: {
             1: false,
         },
-    }]));
+    }];
     
-    process.stdout.columns = original;
+    const result = stripAnsi(format(
+        coverageFile,
+        overrides,
+    ));
     
     t.match(result, 'hello.js');
     t.end();

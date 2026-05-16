@@ -20,6 +20,7 @@
   "scripts": {
     "test": "madrun test",
     "coverage": "madrun coverage",
+    "coverage:c8": "madrun coverage:c8",
     "lint": "madrun lint",
     "fresh:lint": "madrun fresh:lint",
     "lint:fresh": "madrun lint:fresh",
@@ -28,8 +29,7 @@
     "watcher": "madrun watcher",
     "watch:test": "madrun watch:test",
     "watch:lint": "madrun watch:lint",
-    "watch:tape": "madrun watch:tape",
-    "prewisdom": "madrun prewisdom"
+    "watch:tape": "madrun watch:tape"
   },
   "dependencies": {
     "chalk": "^5.0.0",
