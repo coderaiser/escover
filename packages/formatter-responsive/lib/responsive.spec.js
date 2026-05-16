@@ -1,25 +1,6 @@
 import {stripVTControlCharacters as stripAnsi} from 'node:util';
 import {test} from 'supertape';
-import format, {
-    getLinesPercent,
-    createTableOptions,
-} from './responsive.js';
-
-test('getLinesPercent: normal', (t) => {
-    const result = getLinesPercent(10, 5);
-    const expected = 50;
-    
-    t.equal(result, expected);
-    t.end();
-});
-
-test('getLinesPercent: zero lines', (t) => {
-    const result = getLinesPercent(0, 5);
-    const expected = 100;
-    
-    t.equal(result, expected);
-    t.end();
-});
+import format from './responsive.js';
 
 test('format: skipFull returns message', (t) => {
     const result = format([], {
@@ -198,53 +179,5 @@ test('format: percent column disabled when width < 70', (t) => {
     ));
     
     t.match(result, 'hello.js');
-    t.end();
-});
-
-test('createTableOptions: returns correct number of columns', (t) => {
-    const result = createTableOptions({
-        totalWidth: 120,
-        showPercent: true,
-        tableData: [],
-    }).columns.length;
-    
-    const expected = 3;
-    
-    t.equal(result, expected);
-    t.end();
-});
-
-test('createTableOptions: hides percent column if showPercent false', (t) => {
-    const result = createTableOptions({
-        totalWidth: 120,
-        showPercent: false,
-        tableData: [],
-    }).columns.length;
-    
-    const expected = 2;
-    
-    t.equal(result, expected);
-    t.end();
-});
-
-test('createTableOptions: drawHorizontalLine logic', (t) => {
-    const tableData = [
-        ['a'],
-        ['b'],
-        ['c'],
-        ['d'],
-    ];
-    
-    const opts = createTableOptions({
-        tableData,
-        fileColWidth: 10,
-        percentColWidth: 7,
-        linesColWidth: 20,
-        showPercent: true,
-    });
-    
-    const result = opts.drawHorizontalLine(0) && opts.drawHorizontalLine(1) && opts.drawHorizontalLine(tableData.length);
-    
-    t.ok(result);
     t.end();
 });

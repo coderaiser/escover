@@ -1,5 +1,4 @@
 import {cwd} from 'node:process';
-import {getLinesPercent} from './responsive.js';
 
 const CWD = cwd();
 const {entries, keys} = Object;
@@ -36,4 +35,13 @@ export function parseUncoveredLines(lines) {
             out.push(Number(line));
     
     return out;
+}
+
+export function getLinesPercent(linesCount, uncoveredLinesCount) {
+    if (!linesCount)
+        return 100;
+    
+    const ratio = 100 / linesCount * uncoveredLinesCount;
+    
+    return 100 - Math.round(ratio);
 }
