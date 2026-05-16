@@ -7,7 +7,7 @@ const env = {
 };
 
 const coverageEnv = {
-    ESCOVER_FORMAT: 'istanbul',
+    ESCOVER_FORMAT: 'responsive',
 };
 
 export default {

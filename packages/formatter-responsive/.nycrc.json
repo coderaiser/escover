@@ -1,7 +1,7 @@
 {
-    "skipFull": false,
-    "checkCoverage": false,
-    "all": false,
+    "skipFull": true,
+    "checkCoverage": true,
+    "all": true,
     "exclude": [
         "**/*.spec.js",
         "**/*.config.*",

@@ -28,7 +28,7 @@ test('format: skipFull returns message', (t) => {
         skipFull: true,
     });
     
-    const expected = '💪 coverage 100% Good Job!\n';
+    const expected = '💪 coverage 100%, good job!\n';
     
     t.equal(result, expected);
     t.end();
@@ -45,7 +45,7 @@ test('format: skipFull with covered file returns message', (t) => {
         skipFull: true,
     });
     
-    const expected = '💪 coverage 100% Good Job!\n';
+    const expected = '💪 coverage 100%, good job!\n';
     
     t.equal(result, expected);
     t.end();

@@ -12,7 +12,7 @@ export default (coverageFile, {skipFull = false} = {}) => {
     const files = parseCoverageFile(coverageFile, skipFull);
     
     if (skipFull && !files.length)
-        return '💪 coverage 100% Good Job!\n';
+        return '💪 coverage 100%, good job!\n';
     
     const totalWidth = process.stdout.columns || 80;
     const showPercent = totalWidth >= 70;
