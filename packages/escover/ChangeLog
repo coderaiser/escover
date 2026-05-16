@@ -1,3 +1,9 @@
+2026.05.16, v6.4.0
+
+feature:
+- 0a8db2e escover: plugin-mark: UnaryExpression
+- 1107970 @escover/converter-istanbul: simplify
+
 2026.05.15, v6.3.2
 
 fix:
