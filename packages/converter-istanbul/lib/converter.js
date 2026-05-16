@@ -1,11 +1,16 @@
+import path from 'node:path';
+import process from 'node:process';
+
+const {entries} = Object;
+
 export function fromIstanbul(coverageMap) {
     const result = [];
     const {data} = coverageMap;
     
-    for (const [name, file] of Object.entries(data)) {
+    for (const [name, file] of entries(data)) {
         const lines = {};
         
-        for (const [id, count] of Object.entries(file.s)) {
+        for (const [id, count] of entries(file.s)) {
             const stmt = file.statementMap[id];
             
             for (let {line} = stmt.start; line <= stmt.end.line; line++)
@@ -21,9 +26,6 @@ export function fromIstanbul(coverageMap) {
     return result;
 }
 
-import path from 'node:path';
-import process from 'node:process';
-
 export function toIstanbul(files) {
     const out = {};
     
@@ -33,7 +35,7 @@ export function toIstanbul(files) {
         
         let i = 0;
         
-        for (const [line, covered] of Object.entries(file.lines)) {
+        for (const [line, covered] of entries(file.lines)) {
             statementMap[i] = {
                 start: {
                     line: Number(line),
@@ -64,3 +66,4 @@ export function toIstanbul(files) {
     
     return out;
 }
+
