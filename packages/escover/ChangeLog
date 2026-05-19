@@ -1,3 +1,8 @@
+2026.05.19, v6.5.2
+
+feature:
+- 67c9634 escover: plugin-mark: simplify
+
 2026.05.19, v6.5.1
 
 fix:
