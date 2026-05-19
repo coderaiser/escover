@@ -11,7 +11,7 @@ test('escover: instrument: add lines: report', ({report}) => {
     report('mark-line', 'Mark line');
 });
 
-test('escover: instrument: add lines: transform', ({transform}) => {
+test('escover: instrument: add lines: transform: mark-line', ({transform}) => {
     transform('mark-line');
 });
 
@@ -63,7 +63,7 @@ test('escover: instrument: mark: transform: inc', ({transform}) => {
     transform('inc');
 });
 
-test('escover: instrument: mark: transform: named export', ({transform}) => {
+test('escover: instrument: mark: transform: named-export', ({transform}) => {
     transform('named-export');
 });
 
@@ -75,6 +75,6 @@ test('escover: instrument: mark: transform: delete', ({transform}) => {
     transform('delete');
 });
 
-test('escover: instrument: mark: transform: named export: no report after transform', ({noReportAfterTransform}) => {
+test('escover: instrument: mark: transform: named export: no report after transform: named-export', ({noReportAfterTransform}) => {
     noReportAfterTransform('named-export');
 });
