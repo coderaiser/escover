@@ -1,3 +1,11 @@
+2026.05.19, v6.5.0
+
+feature:
+- c196e66 escover: cli: execute: quotes
+- aef2e3c @escover/formatter-responsive: move out table
+- e283240 @escover/formatter-responsive: parser: move out
+- 166b21b @escover: formatter-responsive: calculator
+
 2026.05.16, v6.4.0
 
 feature:
