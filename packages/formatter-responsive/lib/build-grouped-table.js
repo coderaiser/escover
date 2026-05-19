@@ -5,6 +5,11 @@ import {groupByFolder} from './group-by-folder.js';
 const makeGreen = chalk.hex('#4caf50');
 const makeRed = chalk.hex('#f44336');
 
+const isHide = (groups) => groups.size === 1 && groups
+    .keys()
+    .next()
+    .value === 'lib';
+
 export const getColor = (value) => value === 100 ? makeGreen : makeRed;
 
 function truncateLeft(str, maxLength) {
@@ -30,13 +35,13 @@ export function buildGroupedTable({files, showPercent, linesColWidth, fileColWid
         ]);
     
     const groups = groupByFolder(files);
-    const hideFolders = groups.size === 1;
+    const hideFolders = isHide(groups);
     
     for (const [folder, group] of groups) {
         let sum = 0;
         
-        for (const f of group.files)
-            sum += f.percentLines;
+        for (const {percentLines} of group.files)
+            sum += percentLines;
         
         const coverage = Math.round(sum / group.files.length);
         

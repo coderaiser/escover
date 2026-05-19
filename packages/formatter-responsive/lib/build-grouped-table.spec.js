@@ -33,6 +33,32 @@ test('buildGroupedTable: single group hides folder header', (t) => {
     t.end();
 });
 
+test('buildGroupedTable: single group: nested: do not hide folder header', (t) => {
+    const files = [{
+        filename: 'lib/c/d/a.js',
+        covered: false,
+        lines: [1],
+        percentLines: 50,
+    }, {
+        filename: 'lib/c/d/b.js',
+        covered: true,
+        lines: [],
+        percentLines: 100,
+    }];
+    
+    const [, result] = buildGroupedTable({
+        files,
+        showPercent: false,
+        linesColWidth: 20,
+    });
+    
+    const first = stripAnsi(result[0]);
+    const expected = '...lib/c/d';
+    
+    t.equal(first, expected);
+    t.end();
+});
+
 test('buildGroupedTable: multiple groups shows folder header', (t) => {
     const files = [{
         filename: 'lib/a.js',
