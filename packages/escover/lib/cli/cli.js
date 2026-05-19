@@ -67,17 +67,11 @@ export const cli = async ({argv, exit, readCoverage}) => {
 
 export const isSuccess = (error) => !error || error?.status === Number(process.env.ESCOVER_SUCCESS_EXIT_CODE);
 
-const maybeAddQuotes = (a) => {
-    let start = '';
-    let end = '';
+const makeCmdSafe = (cmd) => {
+    if (cmd.length === 1)
+        return cmd.join('');
     
-    if (a.at(0) !== '"')
-        start = '"';
-    
-    if (a.at(-1) !== '"')
-        end = '"';
-    
-    return [start, a, end].join('');
+    return `"${cmd.join('" "')}"`;
 };
 
 export function execute(cmd, overrides) {
@@ -87,7 +81,7 @@ export function execute(cmd, overrides) {
         env = process.env,
     } = overrides;
     
-    const safeCmd = maybeAddQuotes(cmd.join('" "'));
+    const safeCmd = makeCmdSafe(cmd);
     
     const [error] = tryCatch(run, safeCmd, {
         stdio: 'inherit',

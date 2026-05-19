@@ -37,7 +37,7 @@ test('escover: cli: NODE_OPTIONS: with quotes', (t) => {
     t.end();
 });
 
-test('escover: cli: execute: quotes', (t) => {
+test('escover: cli: execute: no quotes', (t) => {
     const env = {};
     const exit = stub();
     const cmd = ['tape', `'lib/**/*.spec.js'`];
@@ -50,6 +50,29 @@ test('escover: cli: execute: quotes', (t) => {
     });
     
     const args = [`"tape" "'lib/**/*.spec.js'"`, {
+        env: {
+            NODE_OPTIONS: '--import escover/register --unhandled-rejections=strict',
+        },
+        stdio: 'inherit',
+    }];
+    
+    t.calledWith(run, args);
+    t.end();
+});
+
+test('escover: cli: execute: quotes', (t) => {
+    const env = {};
+    const exit = stub();
+    const cmd = [`tape 'test/*.js' 'lib/**/*.spec.js'`];
+    const run = stub();
+    
+    execute(cmd, {
+        env,
+        exit,
+        run,
+    });
+    
+    const args = [`tape 'test/*.js' 'lib/**/*.spec.js'`, {
         env: {
             NODE_OPTIONS: '--import escover/register --unhandled-rejections=strict',
         },
