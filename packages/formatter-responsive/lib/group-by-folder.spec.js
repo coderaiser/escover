@@ -108,3 +108,14 @@ test('groupByFolder: handles single file', (t) => {
     t.equal(group.files[0].fileName, 'only.js');
     t.end();
 });
+
+test('groupByFolder: handles single file: nested', (t) => {
+    const result = groupByFolder([{
+        filename: 'lib/apply-types/index.js',
+    }]);
+    
+    const group = result.get('lib/apply-types');
+    
+    t.equal(group.files[0].fileName, 'index.js');
+    t.end();
+});
