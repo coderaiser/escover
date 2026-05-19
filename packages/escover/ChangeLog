@@ -1,3 +1,8 @@
+2026.05.19, v6.5.1
+
+fix:
+- 68e799c escover: cli: improve support
+
 2026.05.19, v6.5.0
 
 feature:
