@@ -122,8 +122,6 @@ export const fix = (path, {options}) => {
         
         return;
     }
-    
-    replaceWith(path, blockStatement([node]));
 };
 
 const EXCLUDE = [
@@ -209,12 +207,6 @@ export const traverse = ({push}) => ({
             
             push(expPath);
         }
-    },
-    UpdateExpression(path) {
-        if (compare(path, `(${LINE}, __z)`))
-            return;
-        
-        push(path);
     },
     'IfStatement|ConditionalExpression'(path) {
         const consequentPath = path.get('consequent');
