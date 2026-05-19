@@ -4,6 +4,7 @@ import {run, cutEnv} from 'madrun';
 const env = {
     SUPERTAPE_CHECK_SKIPPED: 1,
     ESCOVER_SUCCESS_EXIT_CODE: SKIPPED,
+    NODE_OPTIONS:"--unhandled-rejections=strict",
 };
 
 const coverageEnv = {
