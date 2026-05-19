@@ -50,7 +50,9 @@ export const cli = async ({argv, exit, readCoverage}) => {
     const cmd = argv.slice(2);
     
     if (cmd.length)
-        execute(`"${cmd.join('" "')}"`, exit);
+        execute(cmd, {
+            exit,
+        });
     
     const coverage = readCoverage();
     
@@ -60,28 +62,37 @@ export const cli = async ({argv, exit, readCoverage}) => {
         skipFull,
     });
     
-    /*
-    if (args.format === 'lines')
-        output = reportLines(coverage);
-    else if (args.format === 'responsive')
-        output = reportResponsive(coverage, {
-            skipFull: args.skipFull,
-        });
-    else if (args.format === 'istanbul')
-        output = reportIstanbul(coverage);
-    else
-        output = reportFiles(coverage);
-     */
     process.stdout.write(output);
 };
 
 export const isSuccess = (error) => !error || error?.status === Number(process.env.ESCOVER_SUCCESS_EXIT_CODE);
 
-function execute(cmd, exit) {
-    const [error] = tryCatch(execSync, cmd, {
-        stdio: [0, 1, 2],
+const maybeAddQuotes = (a) => {
+    let start = '';
+    let end = '';
+    
+    if (a.at(0) !== '"')
+        start = '"';
+    
+    if (a.at(-1) !== '"')
+        end = '"';
+    
+    return [start, a, end].join('');
+};
+
+export function execute(cmd, overrides) {
+    const {
+        exit,
+        run = execSync,
+        env = process.env,
+    } = overrides;
+    
+    const safeCmd = maybeAddQuotes(cmd.join('" "'));
+    
+    const [error] = tryCatch(run, safeCmd, {
+        stdio: 'inherit',
         env: {
-            ...process.env,
+            ...env,
             NODE_OPTIONS: createNodeOptions(),
         },
     });
