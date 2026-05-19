@@ -11,7 +11,6 @@ const noop = () => {};
 const {
     numericLiteral,
     sequenceExpression,
-    blockStatement,
 } = types;
 
 const {
