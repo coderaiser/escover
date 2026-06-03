@@ -9,15 +9,27 @@ import {help} from './help.js';
 const {env} = process;
 const {NODE_OPTIONS, ESCOVER_FORMAT} = env;
 
-export const createNodeOptions = (options = NODE_OPTIONS || '') => {
+export const createNodeOptions = (options = '') => {
     if (!options.includes('escover/register'))
         return `--import escover/register ${options}`;
     
     return options;
 };
 
-export const cli = async ({argv, exit, readCoverage}) => {
-    const {skipFull} = readConfig();
+export const cli = async (overrides) => {
+    const {
+        argv,
+        exit,
+        readCoverage,
+        readConfig: readConfigOverride,
+        log = console.log,
+        stdout = process.stdout,
+        getReport,
+        execute: executeOverride,
+    } = overrides;
+    
+    const {skipFull} = (readConfigOverride || readConfig)();
+    
     const args = yargsParser(argv.slice(2), {
         string: ['format'],
         boolean: ['version', 'skip-full', 'help'],
@@ -33,36 +45,34 @@ export const cli = async ({argv, exit, readCoverage}) => {
     });
     
     if (args.version) {
-        console.log(`v${version()}`);
+        log(`v${version()}`);
         return exit();
     }
     
     if (args.help) {
-        console.log(help());
-        return exit();
-    }
-    
-    if (args.help) {
-        console.log(help());
+        log(help());
         return exit();
     }
     
     const cmd = argv.slice(2);
     
-    if (cmd.length)
-        execute(cmd, {
+    if (cmd.length) {
+        const exec = executeOverride || execute;
+        
+        exec(cmd, {
             exit,
         });
+    }
     
     const coverage = readCoverage();
     
-    const {default: report} = await import(`@escover/formatter-${args.format}`);
+    const report = getReport || (await import(`@escover/formatter-${args.format}`)).default;
     
     const output = report(coverage, {
         skipFull,
     });
     
-    process.stdout.write(output);
+    stdout.write(output);
 };
 
 export const isSuccess = (error) => !error || error?.status === Number(process.env.ESCOVER_SUCCESS_EXIT_CODE);
@@ -87,7 +97,7 @@ export function execute(cmd, overrides) {
         stdio: 'inherit',
         env: {
             ...env,
-            NODE_OPTIONS: createNodeOptions(),
+            NODE_OPTIONS: createNodeOptions(NODE_OPTIONS),
         },
     });
     

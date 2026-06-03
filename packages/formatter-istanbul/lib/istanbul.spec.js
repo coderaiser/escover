@@ -38,7 +38,9 @@ test('@escover/istanbul: createCoverageMap', (t) => {
         createCoverageMap,
     });
     
-    t.calledWith(createCoverageMap, [{}]);
+    const args = [{}];
+    
+    t.calledWith(createCoverageMap, args);
     t.end();
 });
 
