@@ -1,6 +1,8 @@
 import {test, stub} from 'supertape';
 import {isExclude, readConfig} from './config.js';
 
+const {stringify} = JSON;
+
 test('escover: config: readConfig', async (t) => {
     const find = stub();
     
@@ -34,7 +36,10 @@ test('escover: config: readConfig: returns checkCoverage false by default', asyn
 
 test('escover: config: readConfig: returns lines threshold from nycrc', async (t) => {
     const find = stub().returns('/path/.nycrc.json');
-    const read = stub().returns('{"checkCoverage": true, "lines": 80}');
+    const read = stub().returns(stringify({
+        checkCoverage: true,
+        lines: 80,
+    }));
     
     const result = await readConfig({
         find,
@@ -47,7 +52,9 @@ test('escover: config: readConfig: returns lines threshold from nycrc', async (t
 
 test('escover: config: readConfig: returns checkCoverage true when set in nycrc', async (t) => {
     const find = stub().returns('/path/.nycrc.json');
-    const read = stub().returns('{"checkCoverage": true}');
+    const read = stub().returns(stringify({
+        checkCoverage: true,
+    }));
     
     const result = await readConfig({
         find,
