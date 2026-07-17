@@ -27,6 +27,8 @@ export const isExclude = (name, patterns) => {
 
 const defaults = {
     exclude: [],
+    checkCoverage: false,
+    lines: 100,
 };
 
 export const readConfig = (overrides = {}) => {

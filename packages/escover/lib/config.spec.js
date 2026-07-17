@@ -18,3 +18,55 @@ test('escover: config: isExclude', (t) => {
     t.ok(result, 'should add globs');
     t.end();
 });
+
+test('escover: config: readConfig: returns checkCoverage false by default', async (t) => {
+    const find = stub();
+    const read = stub();
+    
+    const result = await readConfig({
+        find,
+        read,
+    });
+    
+    t.notOk(result.checkCoverage);
+    t.end();
+});
+
+test('escover: config: readConfig: returns lines threshold from nycrc', async (t) => {
+    const find = stub().returns('/path/.nycrc.json');
+    const read = stub().returns('{"checkCoverage": true, "lines": 80}');
+    
+    const result = await readConfig({
+        find,
+        read,
+    });
+    
+    t.equal(result.lines, 80);
+    t.end();
+});
+
+test('escover: config: readConfig: returns checkCoverage true when set in nycrc', async (t) => {
+    const find = stub().returns('/path/.nycrc.json');
+    const read = stub().returns('{"checkCoverage": true}');
+    
+    const result = await readConfig({
+        find,
+        read,
+    });
+    
+    t.ok(result.checkCoverage);
+    t.end();
+});
+
+test('escover: config: readConfig: lines defaults to 100', async (t) => {
+    const find = stub();
+    const read = stub();
+    
+    const result = await readConfig({
+        find,
+        read,
+    });
+    
+    t.equal(result.lines, 100);
+    t.end();
+});

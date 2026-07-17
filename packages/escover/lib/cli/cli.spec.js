@@ -7,6 +7,7 @@ import {
     createNodeOptions,
     execute,
     isSuccess,
+    getOverallPercent,
 } from './cli.js';
 
 const VERSION = `v${version()}`;
@@ -184,6 +185,8 @@ test('escover: cli: cli: execute: report', async (t) => {
         readCoverage: stub().returns(coverage),
         readConfig: stub().returns({
             skipFull: false,
+            checkCoverage: false,
+            lines: 100,
         }),
         stdout: {
             write: stub(),
@@ -194,6 +197,7 @@ test('escover: cli: cli: execute: report', async (t) => {
     const args = [
         coverage, {
             skipFull: false,
+            checkCoverage: false,
         },
     ];
     
@@ -249,6 +253,8 @@ test('escover: cli: cli: skip-full', async (t) => {
         readCoverage: stub().returns(coverage),
         readConfig: stub().returns({
             skipFull: true,
+            checkCoverage: false,
+            lines: 100,
         }),
         stdout: {
             write: stub(),
@@ -259,6 +265,7 @@ test('escover: cli: cli: skip-full', async (t) => {
     const args = [
         coverage, {
             skipFull: true,
+            checkCoverage: false,
         },
     ];
     
@@ -282,6 +289,8 @@ test('escover: cli: cli: no command: report', async (t) => {
         readCoverage: stub().returns(coverage),
         readConfig: stub().returns({
             skipFull: false,
+            checkCoverage: false,
+            lines: 100,
         }),
         stdout: {
             write: stub(),
@@ -291,6 +300,7 @@ test('escover: cli: cli: no command: report', async (t) => {
     const args = [
         coverage, {
             skipFull: false,
+            checkCoverage: false,
         },
     ];
     
@@ -350,22 +360,34 @@ test('escover: cli: isSuccess: yes', (t) => {
 });
 
 test('escover: cli: NODE_OPTIONS: with quotes', (t) => {
-    t.equal(createNodeOptions('--abc'), '--import escover/register --abc');
+    const result = createNodeOptions('--abc');
+    const expected = '--import escover/register --abc';
+    
+    t.equal(result, expected);
     t.end();
 });
 
 test('escover: cli: NODE_OPTIONS: already set', (t) => {
-    t.equal(createNodeOptions('--import escover/register'), '--import escover/register');
+    const result = createNodeOptions('--import escover/register');
+    const expected = '--import escover/register';
+    
+    t.equal(result, expected);
     t.end();
 });
 
 test('escover: cli: NODE_OPTIONS: empty', (t) => {
-    t.equal(createNodeOptions(''), '--import escover/register ');
+    const result = createNodeOptions('');
+    const expected = '--import escover/register ';
+    
+    t.equal(result, expected);
     t.end();
 });
 
 test('escover: cli: NODE_OPTIONS: no', (t) => {
-    t.equal(createNodeOptions(), '--import escover/register ');
+    const result = createNodeOptions();
+    const expected = '--import escover/register ';
+    
+    t.equal(result, expected);
     t.end();
 });
 
@@ -541,5 +563,278 @@ test('escover: cli: execute: no run override', (t) => {
     });
     
     t.notCalled(exit);
+    t.end();
+});
+
+test('escover: cli: getOverallPercent: empty coverage returns 100', (t) => {
+    const result = getOverallPercent([]);
+    
+    t.equal(result, 100);
+    t.end();
+});
+
+test('escover: cli: getOverallPercent: fully covered returns 100', (t) => {
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': true,
+            '2:0': true,
+            '3:0': true,
+        },
+    }];
+    
+    const result = getOverallPercent(coverage);
+    
+    t.equal(result, 100);
+    t.end();
+});
+
+test('escover: cli: getOverallPercent: partial coverage returns correct percent', (t) => {
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': true,
+            '2:0': false,
+            '3:0': true,
+            '4:0': false,
+        },
+    }];
+    
+    const result = getOverallPercent(coverage);
+    
+    t.equal(result, 50);
+    t.end();
+});
+
+test('escover: cli: getOverallPercent: all uncovered returns 0', (t) => {
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': false,
+            '2:0': false,
+        },
+    }];
+    
+    const result = getOverallPercent(coverage);
+    
+    t.equal(result, 0);
+    t.end();
+});
+
+test('escover: cli: getOverallPercent: no lines in files returns 100', (t) => {
+    const coverage = [{
+        name: 'test.js',
+        lines: {},
+    }];
+    
+    const result = getOverallPercent(coverage);
+    
+    t.equal(result, 100);
+    t.end();
+});
+
+test('escover: cli: checkCoverage: passes when coverage meets threshold', async (t) => {
+    const argv = [
+        'node',
+        'escover',
+        'tape',
+        'test.js',
+    ];
+    
+    const exit = stub();
+    
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': true,
+            '2:0': true,
+        },
+    }];
+    
+    await cli({
+        argv,
+        exit,
+        readCoverage: stub().returns(coverage),
+        readConfig: stub().returns({
+            skipFull: false,
+            checkCoverage: true,
+            lines: 80,
+        }),
+        stdout: {
+            write: stub(),
+        },
+        stderr: {
+            write: stub(),
+        },
+        getReport: stub().returns('output'),
+        execute: stub(),
+    });
+    
+    t.notCalled(exit);
+    t.end();
+});
+
+test('escover: cli: checkCoverage: exits 1 when coverage below threshold', async (t) => {
+    const argv = [
+        'node',
+        'escover',
+        'tape',
+        'test.js',
+    ];
+    
+    const exit = stub();
+    
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': true,
+            '2:0': false,
+        },
+    }];
+    
+    await cli({
+        argv,
+        exit,
+        readCoverage: stub().returns(coverage),
+        readConfig: stub().returns({
+            skipFull: false,
+            checkCoverage: true,
+            lines: 90,
+        }),
+        stdout: {
+            write: stub(),
+        },
+        stderr: {
+            write: stub(),
+        },
+        getReport: stub().returns('output'),
+        execute: stub(),
+    });
+    
+    t.calledWith(exit, [1]);
+    t.end();
+});
+
+test('escover: cli: checkCoverage: writes error message to stderr when below threshold', async (t) => {
+    const argv = [
+        'node',
+        'escover',
+        'tape',
+        'test.js',
+    ];
+    
+    const exit = stub();
+    
+    const stderr = {
+        write: stub(),
+    };
+    
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': true,
+            '2:0': false,
+        },
+    }];
+    
+    await cli({
+        argv,
+        exit,
+        readCoverage: stub().returns(coverage),
+        readConfig: stub().returns({
+            skipFull: false,
+            checkCoverage: true,
+            lines: 90,
+        }),
+        stdout: {
+            write: stub(),
+        },
+        stderr,
+        getReport: stub().returns('output'),
+        execute: stub(),
+    });
+    
+    t.calledWith(stderr.write, ['ERROR: lines coverage 50% is below threshold (90%)\n']);
+    t.end();
+});
+
+test('escover: cli: checkCoverage: false skips check even when coverage is 0%', async (t) => {
+    const argv = [
+        'node',
+        'escover',
+        'tape',
+        'test.js',
+    ];
+    
+    const exit = stub();
+    
+    const coverage = [{
+        name: 'test.js',
+        lines: {
+            '1:0': false,
+        },
+    }];
+    
+    await cli({
+        argv,
+        exit,
+        readCoverage: stub().returns(coverage),
+        readConfig: stub().returns({
+            skipFull: false,
+            checkCoverage: false,
+            lines: 100,
+        }),
+        stdout: {
+            write: stub(),
+        },
+        stderr: {
+            write: stub(),
+        },
+        getReport: stub().returns('output'),
+        execute: stub(),
+    });
+    
+    t.notCalled(exit);
+    t.end();
+});
+
+test('escover: cli: checkCoverage: passes checkCoverage to report', async (t) => {
+    const argv = [
+        'node',
+        'escover',
+        'tape',
+        'test.js',
+    ];
+    
+    const exit = stub();
+    const coverage = [];
+    const report = stub().returns('output');
+    
+    await cli({
+        argv,
+        exit,
+        readCoverage: stub().returns(coverage),
+        readConfig: stub().returns({
+            skipFull: false,
+            checkCoverage: true,
+            lines: 100,
+        }),
+        stdout: {
+            write: stub(),
+        },
+        stderr: {
+            write: stub(),
+        },
+        getReport: report,
+        execute: stub(),
+    });
+    const args = [
+        coverage, {
+            skipFull: false,
+            checkCoverage: true,
+        },
+    ];
+    
+    t.calledWith(report, args);
     t.end();
 });

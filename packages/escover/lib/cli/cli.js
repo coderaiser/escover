@@ -24,11 +24,16 @@ export const cli = async (overrides) => {
         readConfig: readConfigOverride,
         log = console.log,
         stdout = process.stdout,
+        stderr = process.stderr,
         getReport,
         execute: executeOverride,
     } = overrides;
     
-    const {skipFull} = (readConfigOverride || readConfig)();
+    const {
+        skipFull,
+        checkCoverage,
+        lines: linesThreshold,
+    } = (readConfigOverride || readConfig)();
     
     const args = yargsParser(argv.slice(2), {
         string: ['format'],
@@ -70,10 +75,42 @@ export const cli = async (overrides) => {
     
     const output = report(coverage, {
         skipFull,
+        checkCoverage,
     });
     
     stdout.write(output);
+    
+    if (checkCoverage) {
+        const overallPercent = getOverallPercent(coverage);
+        
+        if (overallPercent < linesThreshold) {
+            stderr.write(`ERROR: lines coverage ${overallPercent}% is below threshold (${linesThreshold}%)\n`);
+            return exit(1);
+        }
+    }
 };
+
+export function getOverallPercent(coverage) {
+    if (!coverage.length)
+        return 100;
+    
+    let totalLines = 0;
+    let totalUncovered = 0;
+    
+    for (const {lines} of coverage) {
+        for (const covered of Object.values(lines)) {
+            totalLines++;
+            
+            if (!covered)
+                totalUncovered++;
+        }
+    }
+    
+    if (!totalLines)
+        return 100;
+    
+    return Math.round(100 - 100 / totalLines * totalUncovered);
+}
 
 export const isSuccess = (error) => !error || error?.status === Number(process.env.ESCOVER_SUCCESS_EXIT_CODE);
 
