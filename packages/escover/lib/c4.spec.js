@@ -6,7 +6,10 @@ import {
 } from './c4.js';
 
 test('escover: getFiles', (t) => {
-    t.equal(getFileEntries(), __fileEntries);
+    const result = getFileEntries();
+    const expected = __fileEntries;
+    
+    t.equal(result, expected);
     t.end();
 });
 

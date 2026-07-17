@@ -22,10 +22,9 @@ you have a couple problems to solve.
 
 ### 🤷‍ How to get coverage when `nyc` doesn't supported?
 
-☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query parameters`
-which are needed to load module again, and apply mocks.
+☝️ `c8` could help, but [no](https://github.com/coderaiser/c8-reproduce) it supports no `query parameters`which are needed to load module again, and apply mocks.
 
-### 🤷‍  How to get coverage when mocks are used?
+### 🤷‍ How to get coverage when mocks are used?
 
 ☝️ Use 🎩**ESCover**! It supports loaders, `ESM` and collects coverage as a loader!
 

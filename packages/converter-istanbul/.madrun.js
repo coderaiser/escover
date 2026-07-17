@@ -22,5 +22,5 @@ export default {
     'watch:test': async () => [env, await run('watcher', await cutEnv('test'))],
     'watch:lint': async () => await run('watcher', `'npm run lint'`),
     'watch:tape': () => 'nodemon -w test -w lib --exec tape',
-    'prewisdom': () => run(['lint', 'test']),
+    'prewisdom': () => run(['lint', 'coverage']),
 };
