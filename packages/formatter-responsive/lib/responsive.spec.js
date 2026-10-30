@@ -161,6 +161,98 @@ test('format: percent column enabled when width >= 70', (t) => {
     t.end();
 });
 
+test('format: all covered: no uncovered lines column', (t) => {
+    const result = stripAnsi(format([{
+        name: 'hello.js',
+        lines: {
+            1: true,
+        },
+    }], {
+        columns: 40,
+    }));
+    
+    t.notOk(result.includes('Uncovered'));
+    t.end();
+});
+
+test('format: all covered: narrow terminal shows whole path and file name', (t) => {
+    const result = stripAnsi(format([{
+        name: 'packages/nirguna/lib/printer/printer.spec.js',
+        lines: {
+            1: true,
+        },
+    }, {
+        name: 'packages/nirguna/lib/compiler/compiler.js',
+        lines: {
+            1: true,
+        },
+    }], {
+        columns: 40,
+    }));
+    
+    t.match(result, 'packages/nirguna/lib/printer');
+    t.end();
+});
+
+test('format: narrow terminal: file name is not wrapped', (t) => {
+    const result = stripAnsi(format([{
+        name: 'packages/nirguna/lib/printer/printer.spec.js',
+        lines: {
+            1: true,
+        },
+    }, {
+        name: 'packages/nirguna/lib/compiler/compiler.js',
+        lines: {
+            1: true,
+        },
+    }], {
+        columns: 40,
+    }));
+    
+    t.match(result, ' printer.spec.js ');
+    t.end();
+});
+
+test('format: no row is wider than the terminal', (t) => {
+    const coverageFile = [{
+        name: 'packages/nirguna/lib/printer/printer.spec.js',
+        lines: {
+            1: true,
+        },
+    }, {
+        name: `packages/${'a'.repeat(60)}/operator.js`,
+        lines: {
+            1: true,
+            2: false,
+            3: false,
+            4: false,
+            9: false,
+            20: false,
+        },
+    }];
+    
+    const widest = [
+        30,
+        40,
+        60,
+        120,
+    ]
+        .map((columns) => {
+            const lines = stripAnsi(format(
+                coverageFile,
+                {
+                    columns,
+                },
+            )).split('\n');
+            
+            return Math.max(...lines.map(({length}) => length)) - columns;
+        })
+        .reduce((a, b) => Math.max(a, b));
+    
+    t.ok(widest <= 0);
+    t.end();
+});
+
 test('format: percent column disabled when width < 70', (t) => {
     const overrides = {
         columns: 60,

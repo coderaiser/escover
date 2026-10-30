@@ -5,6 +5,7 @@ test('createTableOptions: returns correct number of columns', (t) => {
     const result = createTableOptions({
         totalWidth: 120,
         showPercent: true,
+        linesColWidth: 20,
         tableData: [],
     }).columns.length;
     
@@ -18,10 +19,37 @@ test('createTableOptions: hides percent column if showPercent false', (t) => {
     const result = createTableOptions({
         totalWidth: 120,
         showPercent: false,
+        linesColWidth: 20,
         tableData: [],
     }).columns.length;
     
     const expected = 2;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('createTableOptions: hides lines column if linesColWidth is 0', (t) => {
+    const result = createTableOptions({
+        showPercent: true,
+        linesColWidth: 0,
+        tableData: [],
+    }).columns.length;
+    
+    const expected = 2;
+    
+    t.equal(result, expected);
+    t.end();
+});
+
+test('createTableOptions: only file column when percent and lines are hidden', (t) => {
+    const result = createTableOptions({
+        showPercent: false,
+        linesColWidth: 0,
+        tableData: [],
+    }).columns.length;
+    
+    const expected = 1;
     
     t.equal(result, expected);
     t.end();

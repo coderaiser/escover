@@ -15,6 +15,15 @@ export function formatLines(nums, maxLen = 20) {
     return getShortenedRange(ranges, maxLen);
 }
 
+export function getLinesWidth(files) {
+    let width = 0;
+    
+    for (const {lines} of files)
+        width = Math.max(width, formatLines(lines, Infinity).length);
+    
+    return width;
+}
+
 export function getShortenedRange(ranges, maxLen) {
     const last = ranges
         .at(-1)

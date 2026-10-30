@@ -2,6 +2,7 @@ import process from 'node:process';
 import {table} from 'table';
 import {buildGroupedTable} from './build-grouped-table.js';
 import {calculate} from './calculator.js';
+import {getLinesWidth} from './format-lines.js';
 import {parseCoverageFile} from './parser.js';
 import {createTableOptions} from './table.js';
 
@@ -23,7 +24,7 @@ export default (coverageFile, overrides = {}) => {
         linesColWidth,
         percentColWidth,
         fileColWidth,
-    } = calculate(columns);
+    } = calculate(columns, getLinesWidth(files));
     
     const tableData = buildGroupedTable({
         files,

@@ -50,16 +50,17 @@ test('buildGroupedTable: single group: nested: do not hide folder header', (t) =
         files,
         showPercent: false,
         linesColWidth: 20,
+        fileColWidth: 20,
     });
     
     const first = stripAnsi(result[0]);
-    const expected = '...lib/c/d';
+    const expected = 'lib/c/d';
     
     t.equal(first, expected);
     t.end();
 });
 
-test('buildGroupedTable: multiple groups shows folder header', (t) => {
+test('buildGroupedTable: tiny file column: file name is replaced with ellipsis', (t) => {
     const files = [{
         filename: 'lib/a.js',
         covered: false,
@@ -122,7 +123,118 @@ test('buildGroupedTable: without percent column', (t) => {
     t.end();
 });
 
-test('buildGroupedTable: truncate long file name', (t) => {
+test('buildGroupedTable: without lines column: header', (t) => {
+    const files = [{
+        filename: 'lib/index.js',
+        covered: true,
+        lines: [],
+        percentLines: 100,
+    }];
+    
+    const expected = ['File'];
+    
+    const [result] = buildGroupedTable({
+        files,
+        showPercent: false,
+        linesColWidth: 0,
+        fileColWidth: 20,
+    });
+    
+    t.deepEqual(result, expected);
+    t.end();
+});
+
+test('buildGroupedTable: without lines column: file row has only name', (t) => {
+    const files = [{
+        filename: 'lib/index.js',
+        covered: true,
+        lines: [],
+        percentLines: 100,
+    }];
+    
+    const [, row] = buildGroupedTable({
+        files,
+        showPercent: false,
+        linesColWidth: 0,
+        fileColWidth: 20,
+    });
+    
+    const result = row.map(stripAnsi);
+    const expected = [' index.js'];
+    
+    t.deepEqual(result, expected);
+    t.end();
+});
+
+test('buildGroupedTable: without lines column: folder row has only name and percent', (t) => {
+    const files = [{
+        filename: 'lib/a/index.js',
+        covered: true,
+        lines: [],
+        percentLines: 100,
+    }];
+    
+    const [, row] = buildGroupedTable({
+        files,
+        showPercent: true,
+        linesColWidth: 0,
+        fileColWidth: 20,
+    });
+    
+    const result = row.map(stripAnsi);
+    const expected = [
+        'lib/a',
+        '100%',
+    ];
+    
+    t.deepEqual(result, expected);
+    t.end();
+});
+
+test('buildGroupedTable: lines header: shortened to fit the column', (t) => {
+    const files = [{
+        filename: 'lib/index.js',
+        covered: true,
+        lines: [],
+        percentLines: 100,
+    }];
+    
+    const headers = [];
+    
+    for (const linesColWidth of [
+        18,
+        17,
+        9,
+        8,
+        5,
+        4,
+        1,
+    ]) {
+        const [[, header]] = buildGroupedTable({
+            files,
+            showPercent: false,
+            linesColWidth,
+            fileColWidth: 20,
+        });
+        
+        headers.push(header);
+    }
+    
+    const expected = [
+        'Uncovered Lines #s',
+        'Uncovered',
+        'Uncovered',
+        'Lines',
+        'Lines',
+        '',
+        '',
+    ];
+    
+    t.deepEqual(headers, expected);
+    t.end();
+});
+
+test('buildGroupedTable: truncate long file name: keeps beginning and end', (t) => {
     const files = [{
         filename: 'lib/very-long-file-name-example.js',
         covered: true,
@@ -143,13 +255,34 @@ test('buildGroupedTable: truncate long file name', (t) => {
     });
     
     const normalized = stripAnsi(column);
-    const expected = ' ...le.js';
+    const expected = ' ver....js';
     
     t.equal(normalized, expected);
     t.end();
 });
 
-test('buildGroupedTable: truncate long folder name', (t) => {
+test('buildGroupedTable: file name that fills the column is not truncated and does not wrap', (t) => {
+    const files = [{
+        filename: 'lib/printer.js',
+        covered: true,
+        lines: [],
+        percentLines: 100,
+    }];
+    
+    const [, [column]] = buildGroupedTable({
+        files,
+        showPercent: false,
+        linesColWidth: 0,
+        fileColWidth: 11,
+    });
+    
+    const normalized = stripAnsi(column);
+    
+    t.equal(normalized, ' printer.js');
+    t.end();
+});
+
+test('buildGroupedTable: truncate long folder name: keeps beginning and end', (t) => {
     const files = [{
         filename: '/very/long/path/to/folder/file.js',
         covered: true,
@@ -170,8 +303,8 @@ test('buildGroupedTable: truncate long folder name', (t) => {
     });
     
     const result = stripAnsi(column);
-    const expected = '...older';
+    const expected = '/ver...der';
     
-    t.match(result, expected);
+    t.equal(result, expected);
     t.end();
 });

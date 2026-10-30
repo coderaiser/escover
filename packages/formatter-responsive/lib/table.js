@@ -16,12 +16,13 @@ export function createTableOptions({showPercent, tableData, fileColWidth, percen
             width: percentColWidth,
         });
     
-    columns.push({
-        paddingLeft: 1,
-        paddingRight: 1,
-        width: linesColWidth,
-        wrapWord: false,
-    });
+    if (linesColWidth > 0)
+        columns.push({
+            paddingLeft: 1,
+            paddingRight: 1,
+            width: linesColWidth,
+            wrapWord: false,
+        });
     
     return {
         drawHorizontalLine: (i) => !i || i === 1 || i === tableData.length,

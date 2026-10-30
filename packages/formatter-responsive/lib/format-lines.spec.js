@@ -1,8 +1,46 @@
 import {test} from 'supertape';
 import {
     formatLines,
+    getLinesWidth,
     getShortenedRange,
 } from './format-lines.js';
+
+test('escover: formatters: responsive: getLinesWidth: no files', (t) => {
+    const result = getLinesWidth([]);
+    
+    t.equal(result, 0);
+    t.end();
+});
+
+test('escover: formatters: responsive: getLinesWidth: all covered', (t) => {
+    const result = getLinesWidth([{
+        lines: [],
+    }, {
+        lines: [],
+    }]);
+    
+    t.equal(result, 0);
+    t.end();
+});
+
+test('escover: formatters: responsive: getLinesWidth: the widest file wins', (t) => {
+    const result = getLinesWidth([{
+        lines: [1],
+    }, {
+        lines: [
+            2,
+            3,
+            4,
+            9,
+            20,
+        ],
+    }, {
+        lines: [],
+    }]);
+    
+    t.equal(result, '2..4, 9, 20'.length);
+    t.end();
+});
 
 test('escover: formatters: responsive: formatLines: <= 10 items', (t) => {
     const result = formatLines([
